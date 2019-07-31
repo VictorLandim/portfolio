@@ -1,8 +1,8 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import styled from "styled-components"
-import { Container } from "./layoutComponents"
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
+import { Container } from './Layout'
 
 const Header = ({ siteTitle, className }) => (
   <header className={className}>
@@ -15,11 +15,11 @@ const Header = ({ siteTitle, className }) => (
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  siteTitle: PropTypes.string
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: ``
 }
 
 const StyledHeader = styled(Header)`

@@ -1,37 +1,38 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
-import { GlobalStyle } from "./globalStyle"
-import { MainWrapper } from "./layoutComponents"
-import Header from "./header"
-import Footer from "./footer"
+import styled from "styled-components"
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <GlobalStyle />
-        <MainWrapper>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <main>{children}</main>
-          <Footer />
-        </MainWrapper>
-      </>
-    )}
-  />
-)
+export const MainWrapper = styled.div`
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+`
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+export const Container = styled.div`
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0px 1.0875rem;
+  padding-top: 0;
+`
+export const Row = styled.div`
+  display: flex;
+  flex: ${props => (props.flex ? props.flex : "initial")};
+  flex-direction: row;
+  flex-wrap: ${props => (props.wrap ? props.wrap : "initial")};
+  align-content: ${props =>
+    props.alignContent ? props.alignContent : "initial"};
+  justify-content: ${props =>
+    props.justifyContent ? props.justifyContent : "initial"};
+  @media screen and (max-width: 768px) {
+    flex-direction: ${props => (props.mobile ? "column" : "row")};
+  }
+`
+export const Column = styled.div`
+  flex: ${props => (props.flex ? props.flex : "initial")};
+  flex-direction: column;
+  align-content: ${props =>
+    props.alignContent ? props.alignContent : "initial"};
+  justify-content: ${props =>
+    props.justifyContent ? props.justifyContent : "initial"};
+  margin: ${props => (props.margin ? props.margin : "0")};
+  width: ${props => (props.width ? props.width : "auto")};
+`
