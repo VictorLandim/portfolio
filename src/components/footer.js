@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import { Container } from "./layoutComponents"
+import React from 'react'
+import styled from 'styled-components'
+import { Container } from './Layout'
 
 const Footer = ({ className }) => (
   <footer className={className}>

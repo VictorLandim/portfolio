@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Page from '../components/Page'
-import Image from '../components/image'
-import { Container } from '../components/Layout'
 import SEO from '../components/seo'
 
 import styled from 'styled-components'
