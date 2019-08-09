@@ -16,7 +16,7 @@ import {
   Title,
   ExternalLink,
   ProjectGrid
-} from './styles/indexStyles';
+} from '../styles/indexStyles';
 
 export const query = graphql`
   query ProjectsQuery {
