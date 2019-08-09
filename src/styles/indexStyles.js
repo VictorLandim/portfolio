@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // import noiseBg from '../images/noise2.png'
-import noiseBg from '../../images/noise.svg';
+import noiseBg from '../images/noise.svg';
 
 export const Hero = styled.section`
   min-height: 100vh;
@@ -101,4 +101,10 @@ export const ProjectGrid = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 3rem;
+`;
+
+export const InterestContainer = styled.div`
+  display: flex;
+  margin-top: 3rem;
+  justify-content: center;
 `;

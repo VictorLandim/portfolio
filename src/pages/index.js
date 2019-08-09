@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Page from '../components/Page';
 import SEO from '../components/seo';
 import Project from '../components/Project';
+import Interest from '../components/Interest';
 
 import { Container } from '../components/Layout';
 
@@ -15,7 +16,8 @@ import {
   Subtitle,
   Title,
   ExternalLink,
-  ProjectGrid
+  ProjectGrid,
+  InterestContainer
 } from '../styles/indexStyles';
 
 export const query = graphql`
@@ -65,9 +67,21 @@ const IndexPage = ({ data }) => {
         </Container>
       </Section>
       <Section>
-        <Container>
+        <Container padTop padBot>
           <Heading>Interests</Heading>
-          <div>- game development - photography - music theory - functional programming</div>
+          <InterestContainer>
+            {[
+              'Game Development',
+              'Computer Graphics',
+              'Functional Programming',
+              'Music Theory',
+              'Photography'
+            ].map(interest => (
+              <Interest>{interest}</Interest>
+            ))}
+          </InterestContainer>
+        </Container>
+        <Container padTop padBot>
           <Heading>Tools</Heading>
         </Container>
       </Section>
