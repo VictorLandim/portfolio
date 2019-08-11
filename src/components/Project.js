@@ -17,14 +17,14 @@ const Container = styled.div`
   flex: 0 0 48%;
 
   &:before {
-    content: "";
+    content: " ";
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, .6);
-    transition: .3s all;
+    background: rgba(0, 0, 0, 0.6);
+    transition: 0.3s all;
   }
 
   &:hover:before {
@@ -43,22 +43,27 @@ const Container = styled.div`
 const Title = styled.h2`
   color: ${p => p.theme.white};
   font-weight: 700;
-  font-size: 4rem;
+  font-size: 3.75rem;
   font-family: monospace;
   width: 100%;
   z-index: 999;
   position: absolute;
   top: 2rem;
-  left: 2rem;
+  left: 0;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
   transition: 0.3s all;
+  border-bottom: 2px solid currentColor;
 
   ${Container}:hover & {
     color: ${p => p.theme.primary};
-    left: calc(20% + 2rem);
+    /* left: calc(20% + 2rem); */
+    transform: translateX(20%);
   }
 
   @media ${TAB_PORT} {
-    left: calc(20% + 2rem);
+    /* left: calc(20% + 2rem); */
+    transform: translateX(20%);
     color: ${p => p.theme.primary};
   }
 `;
@@ -90,7 +95,7 @@ const Info = styled.aside`
 const Description = styled.p`
   font-size: 1.3rem;
   font-family: lato;
-  margin-top: 5.5rem;
+  margin-top: 7.5rem;
 `;
 
 const TechContainer = styled.div`
