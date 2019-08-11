@@ -16,7 +16,7 @@ const Container = styled.div`
   overflow: hidden;
   flex: 0 0 48%;
 
-  &::before {
+  &:before {
     content: '';
     width: 100%;
     height: 100%;
@@ -27,14 +27,14 @@ const Container = styled.div`
     transition: .3s all;
   }
 
-  &:hover::before {
+  &:hover:before {
     background: none;
   }
 
   @media ${TAB_PORT} {
     flex: 0 0 100%;
 
-    &::before {
+    &:before {
       background: none;
     }
   }
