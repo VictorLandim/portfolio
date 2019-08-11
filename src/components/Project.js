@@ -2,24 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { PHONE } from '../styles/responsive';
 
-export default ({ title, description, tech = [], image, website, source, live }) => (
-  <Container>
-    <h2>{title}</h2>
-    <aside>
-      <Description>{description}</Description>
-      <TechContainer>{tech && tech.map(t => <Tech>{t}</Tech>)}</TechContainer>
-      <ButtonContainer>
-        <ProjectButton href={source} target="_blank" disabled={Boolean(source)}>
-          Source
-        </ProjectButton>
-        <ProjectButton inverted href={live} disabled={Boolean(live)} target="_blank">
-          Live
-        </ProjectButton>
-      </ButtonContainer>
-    </aside>
-  </Container>
-);
-
 const Container = styled.div`
   box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
@@ -83,9 +65,6 @@ const Container = styled.div`
   }
 
   &:hover {
-    & {
-    }
-
     aside {
       transform: translateX(0);
     }
@@ -132,7 +111,7 @@ const ButtonContainer = styled.div`
 
 const ProjectButton = styled.a`
   background-color: ${p => {
-    if (p.disabled) return 'lightgray';
+    // if (p.disabled) return 'lightgray';
     if (p.inverted) return p.theme.white;
     return p.theme.primary;
   }};
@@ -165,3 +144,21 @@ const ProjectButton = styled.a`
     ${p => !p.disabled && 'transform: translateY(-2px);'}
   }
 `;
+
+export default ({ title, description, tech = [], image, website, source }) => (
+  <Container>
+    <h2>{title}</h2>
+    <aside>
+      <Description>{description}</Description>
+      <TechContainer>{tech && tech.map(t => <Tech>{t}</Tech>)}</TechContainer>
+      <ButtonContainer>
+        <ProjectButton href={source} target="_blank" disabled={Boolean(source)}>
+          Source
+        </ProjectButton>
+        <ProjectButton inverted href={website} disabled={Boolean(website)} target="_blank">
+          Live
+        </ProjectButton>
+      </ButtonContainer>
+    </aside>
+  </Container>
+);
