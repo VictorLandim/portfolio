@@ -14,10 +14,11 @@ const Container = styled.div`
   background-position: center;
   min-height: 28rem;
   overflow: hidden;
-  flex: 0 0 48%;
+  /* flex: 0 0 48%; */
+  flex: 0 0 30%;
 
   &:before {
-    content: " ";
+    content: "${' '}";
     width: 100%;
     height: 100%;
     position: absolute;
