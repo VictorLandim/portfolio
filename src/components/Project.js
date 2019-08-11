@@ -14,8 +14,8 @@ const Container = styled.div`
   background-position: center;
   min-height: 28rem;
   overflow: hidden;
-  /* flex: 0 0 48%; */
-  flex: 0 0 30%;
+  flex: 0 0 48%;
+  /* flex: 0 0 30%; */
 
   &:before {
     content: "${' '}";
