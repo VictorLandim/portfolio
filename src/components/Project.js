@@ -27,10 +27,6 @@ const Container = styled.div`
     transition: .3s all;
   }
 
-  @media ${PHONE} {
-    flex: 0 0 100%;
-  }
-
   aside {
     background-color: rgba(255, 255, 255, 0.95);
     width: 80%;
@@ -78,6 +74,10 @@ const Container = styled.div`
       background: none;
     }
   }
+
+  @media ${PHONE} {
+    flex: 0 0 100%;
+  }
 `;
 
 const Description = styled.p`
@@ -85,6 +85,7 @@ const Description = styled.p`
   font-family: lato;
   margin-top: 6rem;
 `;
+
 const TechContainer = styled.div`
   display: flex;
   align-items: center;
