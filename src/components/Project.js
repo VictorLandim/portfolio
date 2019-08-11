@@ -2,6 +2,39 @@ import React from 'react';
 import styled from 'styled-components';
 import { PHONE } from '../styles/responsive';
 
+const Title = styled.h2`
+  color: ${p => p.theme.white};
+  font-weight: 700;
+  font-size: 3.5rem;
+  font-family: monospace;
+  width: 100%;
+  z-index: 999;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  transition: 0.3s all;
+`;
+
+const Info = styled.aside`
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 80%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  transform: translateX(100%);
+  transition: 0.3s all;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media ${PHONE} {
+    transform: unset;
+  }
+`;
+
 const Container = styled.div`
   box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
@@ -27,45 +60,12 @@ const Container = styled.div`
     transition: .3s all;
   }
 
-  aside {
-    background-color: rgba(255, 255, 255, 0.95);
-    width: 80%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    transform: translateX(100%);
-    transition: .3s all;
-    padding: 2rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-
-    @media ${PHONE} {
-      transform: unset;
-    }
-  }
-
-  h2 {
-    color: ${p => p.theme.white};
-    font-weight: 700;
-    font-size: 3.5rem;
-    font-family: monospace;
-    width: 100%;
-    z-index: 999;
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    transition: .3s all;
-  }
-
   &:hover {
-    aside {
+    ${Info} {
       transform: translateX(0);
     }
 
-    h2 {
+    ${Title} {
       color: ${p => p.theme.primary};
       left: calc(20% + 2rem);
     }
@@ -83,7 +83,7 @@ const Container = styled.div`
 const Description = styled.p`
   font-size: 1.2rem;
   font-family: lato;
-  margin-top: 6rem;
+  margin-top: 5rem;
 `;
 
 const TechContainer = styled.div`
@@ -148,8 +148,8 @@ const ProjectButton = styled.a`
 
 export default ({ title, description, tech = [], image, website, source }) => (
   <Container>
-    <h2>{title}</h2>
-    <aside>
+    <Title>{title}</Title>
+    <Info>
       <Description>{description}</Description>
       <TechContainer>{tech && tech.map(t => <Tech>{t}</Tech>)}</TechContainer>
       <ButtonContainer>
@@ -160,6 +160,6 @@ export default ({ title, description, tech = [], image, website, source }) => (
           Live
         </ProjectButton>
       </ButtonContainer>
-    </aside>
+    </Info>
   </Container>
 );
