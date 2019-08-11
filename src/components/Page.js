@@ -8,6 +8,7 @@ const theme = {
   primary: '#202020',
   white: '#FFF',
   black: '#202020',
+  lightGray: '#f5f5f5',
   containerWidth: '112rem',
   containerWidthS: '75rem',
   containerWidthXs: '50rem'

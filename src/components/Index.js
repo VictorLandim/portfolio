@@ -11,7 +11,7 @@ export const Hero = styled.section`
   justify-content: center;
   flex-direction: column;
   position: relative;
-  background-color: white;
+  background-color: #f6f6f6;
 
   @supports (mix-blend-mode: difference) {
     &::before {
@@ -23,6 +23,7 @@ export const Hero = styled.section`
       height: 100%;
       background: #303030 url(${noiseBg});
       clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+      /* clip-path: polygon(0% 0%, 0% 100%, 100% 0%); */
     }
   }
 
@@ -119,7 +120,8 @@ export const ExternalLink = styled.a`
 `;
 
 export const Section = styled.section`
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  background-color: ${p => p.theme.lightGray};
 `;
 
 export const Heading = styled.h2`
@@ -154,4 +156,31 @@ export const InterestContainer = styled.div`
   margin-top: 3rem;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+export const ProjectMoreButton = styled.a`
+  font-size: 1.8rem;
+  margin-top: 5rem;
+  color: ${p => p.theme.primary};
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 1rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: ${p => p.theme.primary};
+    transition: 0.3s all;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
 `;

@@ -19,8 +19,9 @@ import {
   ExternalLink,
   ProjectGrid,
   InterestContainer,
-  HeroText
-} from '../styles/indexStyles';
+  HeroText,
+  ProjectMoreButton
+} from '../components/Index';
 
 export const query = graphql`
   query ProjectsQuery {
@@ -29,6 +30,9 @@ export const query = graphql`
         node {
           id
           title
+          description {
+            description
+          }
           tech
           source
           website
@@ -45,7 +49,11 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ data }) => {
-  const projects = data.allContentfulProject.edges.map(e => e.node);
+  const projects = data.allContentfulProject.edges.map(e => ({
+    ...e.node,
+    description: e.node.description.description,
+    image: e.node.image && e.node.image.file.url
+  }));
 
   return (
     <>
@@ -62,7 +70,7 @@ const IndexPage = ({ data }) => {
           </HeroText>
         </Hero>
         <Section>
-          <Container padTop padBot>
+          <Container padded>
             <Heading>Work</Heading>
             <ProjectGrid>
               {projects
@@ -73,8 +81,10 @@ const IndexPage = ({ data }) => {
                 ))}
             </ProjectGrid>
           </Container>
+        </Section>
 
-          <Container padTop padBot>
+        <Section>
+          <Container padded>
             <Heading>Projects</Heading>
             <ProjectGrid>
               {projects
@@ -84,10 +94,14 @@ const IndexPage = ({ data }) => {
                   <Project key={project.id} {...project} />
                 ))}
             </ProjectGrid>
+            <ProjectMoreButton href="https://github.com/VictorLandim">
+              View more on GitHub &rarr;
+            </ProjectMoreButton>
           </Container>
         </Section>
+
         <Section>
-          <Container padTop padBot>
+          <Container padded>
             <Heading>Interests</Heading>
             <InterestContainer>
               {[
@@ -101,10 +115,30 @@ const IndexPage = ({ data }) => {
               ))}
             </InterestContainer>
           </Container>
-          <Container padTop padBot>
-            <Heading>Tools</Heading>
+        </Section>
+
+        <Section>
+          <Container padded>
+            <Heading>Toolbox</Heading>
+            <InterestContainer>
+              {['NodeJS', 'React', 'React Native', 'Sass', 'BEM', 'Git'].map(interest => (
+                <Interest key={interest}>{interest}</Interest>
+              ))}
+            </InterestContainer>
           </Container>
         </Section>
+
+        <Section>
+          <Container padded>
+            <Heading>Find me</Heading>
+            <InterestContainer>
+              {['Music Theory', 'Photography'].map(interest => (
+                <Interest key={interest}>{interest}</Interest>
+              ))}
+            </InterestContainer>
+          </Container>
+        </Section>
+
         <Footer />
       </Page>
     </>

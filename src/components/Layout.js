@@ -10,8 +10,8 @@ export const Container = styled.div`
     return props.theme.containerWidth;
   }};
 
-  padding-top: ${({ padTop }) => padTop && '3.5rem'};
-  padding-bottom: ${({ padBot }) => padBot && '3.5rem'};
+  padding-top: ${({ padded }) => padded && '3.5rem'};
+  padding-bottom: ${({ padded }) => padded && '3.5rem'};
 
   margin-left: auto;
   margin-right: auto;
