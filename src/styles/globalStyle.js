@@ -36,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
   body {
+    background-color: #fff;
     color: ${props => props.theme.primary};
     font-family: 'Karla', sans-serif;
     font-weight: 400;

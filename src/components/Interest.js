@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { PHONE } from '../styles/responsive';
 
 const Interest = styled.p`
   font-size: 2rem;
@@ -18,6 +19,15 @@ const Interest = styled.p`
     top: 50%;
     transform: translateY(-50%);
     right: -2.5rem;
+  }
+
+  @media ${PHONE} {
+    flex: 1;
+    width: 100%;
+
+    &:not(:last-child)::before {
+      content: none;
+    }
   }
 `;
 
