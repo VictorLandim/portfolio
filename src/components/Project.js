@@ -17,7 +17,7 @@ const Container = styled.div`
   flex: 0 0 48%;
 
   &:before {
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
     position: absolute;
