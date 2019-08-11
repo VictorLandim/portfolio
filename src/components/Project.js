@@ -1,39 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PHONE } from '../styles/responsive';
-
-const Title = styled.h2`
-  color: ${p => p.theme.white};
-  font-weight: 700;
-  font-size: 3.5rem;
-  font-family: monospace;
-  width: 100%;
-  z-index: 999;
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  transition: 0.3s all;
-`;
-
-const Info = styled.aside`
-  background-color: rgba(255, 255, 255, 0.95);
-  width: 80%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  transform: translateX(100%);
-  transition: 0.3s all;
-  padding: 2rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: column;
-
-  @media ${PHONE} {
-    transform: unset;
-  }
-`;
+import { TAB_PORT } from '../styles/responsive';
 
 const Container = styled.div`
   box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.2);
@@ -60,30 +27,70 @@ const Container = styled.div`
     transition: .3s all;
   }
 
-  &:hover {
-    ${Info} {
-      transform: translateX(0);
-    }
+  &:hover::before {
+    background: none;
+  }
 
-    ${Title} {
-      color: ${p => p.theme.primary};
-      left: calc(20% + 2rem);
-    }
+  @media ${TAB_PORT} {
+    flex: 0 0 100%;
 
     &::before {
       background: none;
     }
   }
+`;
 
-  @media ${PHONE} {
-    flex: 0 0 100%;
+const Title = styled.h2`
+  color: ${p => p.theme.white};
+  font-weight: 700;
+  font-size: 4rem;
+  font-family: monospace;
+  width: 100%;
+  z-index: 999;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  transition: 0.3s all;
+
+  ${Container}:hover & {
+    color: ${p => p.theme.primary};
+    left: calc(20% + 2rem);
+  }
+
+  @media ${TAB_PORT} {
+    left: calc(20% + 2rem);
+    color: ${p => p.theme.primary};
+  }
+`;
+
+const Info = styled.aside`
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 80%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  transform: translateX(100%);
+  transition: 0.3s all;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+
+  ${Container}:hover & {
+    transform: translateX(0);
+  }
+
+  @media ${TAB_PORT} {
+    transform: unset;
   }
 `;
 
 const Description = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-family: lato;
-  margin-top: 5rem;
+  margin-top: 5.5rem;
 `;
 
 const TechContainer = styled.div`
