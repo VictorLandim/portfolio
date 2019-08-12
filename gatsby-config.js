@@ -25,8 +25,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `vicotr-landim-portfolio`,
+        short_name: `victor-landim`,
         start_url: `/`,
         background_color: `#202020`,
         theme_color: `#202020`,
@@ -34,12 +34,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
       }
     },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        minify: false
-      }
-    }
+    `gatsby-plugin-styled-components`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
