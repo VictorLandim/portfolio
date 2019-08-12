@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { TAB_PORT } from '../styles/responsive';
+import React from 'react'
+import styled from 'styled-components'
+import { TAB_PORT } from '../styles/responsive'
 
 const Container = styled.div`
   box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.2);
@@ -19,7 +19,7 @@ const Container = styled.div`
     flex: 0 0 100%;
   }
 
-  &:before {
+  /* &:before {
     content: '';
     position: absolute;
     top: 0;
@@ -38,8 +38,26 @@ const Container = styled.div`
     &:before {
       background-color: rgba(0, 0, 0, 0);
     }
+  } */
+`
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 0.3s all;
+
+  ${Container}:hover & {
+    background-color: rgba(0, 0, 0, 0);
   }
-`;
+
+  @media ${TAB_PORT} {
+    background-color: rgba(0, 0, 0, 0);
+  }
+`
 
 const Title = styled.h2`
   color: ${p => p.theme.white};
@@ -67,7 +85,7 @@ const Title = styled.h2`
     transform: translateX(20%);
     color: ${p => p.theme.primary};
   }
-`;
+`
 
 const Info = styled.aside`
   background-color: rgba(255, 255, 255, 0.95);
@@ -91,20 +109,20 @@ const Info = styled.aside`
   @media ${TAB_PORT} {
     transform: unset;
   }
-`;
+`
 
 const Description = styled.p`
   font-size: 1.3rem;
   font-family: lato;
   margin-top: 7.5rem;
-`;
+`
 
 const TechContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-`;
+`
 
 const Tech = styled.div`
   font-size: 1rem;
@@ -115,24 +133,24 @@ const Tech = styled.div`
   border: 1px solid ${p => p.theme.white};
   padding: 0.6rem 1rem;
   border-radius: 1.2rem;
-`;
+`
 
 const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
+`
 
 const ProjectButton = styled.a`
   background-color: ${p => {
     // if (p.disabled) return 'lightgray';
-    if (p.inverted) return p.theme.white;
-    return p.theme.primary;
+    if (p.inverted) return p.theme.white
+    return p.theme.primary
   }};
 
   color: ${p => {
-    if (p.inverted) return p.theme.primary;
-    return p.theme.white;
+    if (p.inverted) return p.theme.primary
+    return p.theme.white
   }};
 
   border-radius: 0.8rem;
@@ -157,10 +175,11 @@ const ProjectButton = styled.a`
   &:hover {
     ${p => !p.disabled && 'transform: translateY(-2px);'}
   }
-`;
+`
 
 export default ({ title, description, tech = [], image, website, source }) => (
   <Container>
+    <Overlay />
     <Title>{title}</Title>
     <Info>
       <Description>{description}</Description>
@@ -175,4 +194,4 @@ export default ({ title, description, tech = [], image, website, source }) => (
       </ButtonContainer>
     </Info>
   </Container>
-);
+)
