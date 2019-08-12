@@ -8,19 +8,37 @@ import Interest from '../components/Interest'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 
-import { Container } from '../components/Layout'
+import SocialLink from '../components/SocialLink'
+
+import { Container, Flex } from '../components/Layout'
+
+import {
+  DiCss3,
+  DiGit,
+  DiGulp,
+  DiHtml5,
+  DiJsBadge,
+  DiMongodb,
+  DiNodejs,
+  DiReact,
+  DiSass,
+  DiTerminal,
+  DiVisualstudio
+} from 'react-icons/di'
 
 import {
   Heading,
   Hero,
   Section,
+  SectionProjects,
   Subtitle,
   Title,
   ExternalLink,
   ProjectGrid,
   InterestContainer,
   HeroText,
-  ProjectMoreButton
+  ProjectMoreButton,
+  ToolContainer
 } from '../components/Index'
 
 export const query = graphql`
@@ -59,12 +77,12 @@ const IndexPage = ({ data }) => {
     <>
       {/* <Nav /> */}
       <Page>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO title="Home" keywords={[`victor`, `landim`, `web`, `developer`, `portfolio`]} />
         <Hero>
           <HeroText>
             <Title value="hi! i'm victor.">hi! i'm ∇ictor.</Title>
             <Subtitle>
-              fullstack developer creating web experiences at{' '}
+              fullstack developer crafting web experiences at{' '}
               <ExternalLink target="_blank" href="https://aulascolmeia.com.br">
                 Colmeia
               </ExternalLink>
@@ -72,73 +90,83 @@ const IndexPage = ({ data }) => {
             </Subtitle>
           </HeroText>
         </Hero>
-        <Section>
+        <SectionProjects>
           <Container padded>
             <Heading>Work</Heading>
-            <ProjectGrid>
+            <Flex justifyContent="space-between">
               {projects
                 .filter(p => p.isWork)
                 .reverse()
                 .map(project => (
                   <Project key={project.id} {...project} />
                 ))}
-            </ProjectGrid>
+            </Flex>
           </Container>
-        </Section>
-
-        <Section>
+        </SectionProjects>
+        <SectionProjects>
           <Container padded>
             <Heading>Projects</Heading>
-            <ProjectGrid>
+            <Flex justifyContent="space-between">
               {projects
                 .filter(p => !p.isWork)
                 .reverse()
                 .map(project => (
                   <Project key={project.id} {...project} />
                 ))}
-            </ProjectGrid>
+            </Flex>
             <ProjectMoreButton target="_blank" href="https://github.com/VictorLandim">
               View more on GitHub &rarr;
             </ProjectMoreButton>
           </Container>
-        </Section>
+        </SectionProjects>
 
         <Section>
           <Container padded>
             <Heading>Interests</Heading>
-            <InterestContainer>
+            <Flex>
               {[
                 'Game Development',
                 'Computer Graphics',
                 'Functional Programming',
                 'Music Theory',
-                'Photography'
+                'Photography',
+                'Design',
+                'Calligraphy',
+                'Linguistics'
               ].map(interest => (
                 <Interest key={interest}>{interest}</Interest>
               ))}
-            </InterestContainer>
+            </Flex>
           </Container>
         </Section>
 
         <Section>
           <Container padded>
             <Heading>Toolbox</Heading>
-            <InterestContainer>
-              {['NodeJS', 'React', 'React Native', 'Sass', 'BEM', 'Git'].map(interest => (
-                <Interest key={interest}>{interest}</Interest>
-              ))}
-            </InterestContainer>
+            <ToolContainer>
+              <DiCss3 size={40} color={'#202020'} />
+              <DiGit size={40} color={'#202020'} />
+              <DiGulp size={40} color={'#202020'} />
+              <DiHtml5 size={40} color={'#202020'} />
+              <DiJsBadge size={40} color={'#202020'} />
+              <DiMongodb size={40} color={'#202020'} />
+              <DiNodejs size={40} color={'#202020'} />
+              <DiReact size={40} color={'#202020'} />
+              <DiSass size={40} color={'#202020'} />
+              <DiTerminal size={40} color={'#202020'} />
+              <DiVisualstudio size={40} color={'#202020'} />
+            </ToolContainer>
           </Container>
         </Section>
 
         <Section>
           <Container padded>
             <Heading>Find me</Heading>
-            <InterestContainer>
-              {['Music Theory', 'Photography'].map(interest => (
-                <Interest key={interest}>{interest}</Interest>
-              ))}
-            </InterestContainer>
+            <Flex>
+              <SocialLink>Github</SocialLink>
+              <SocialLink>Email</SocialLink>
+              <SocialLink>LinkedIn</SocialLink>
+            </Flex>
           </Container>
         </Section>
 

@@ -1,13 +1,13 @@
-import styled from 'styled-components';
-import { PHONE, TAB_LAND, TAB_PORT, LARGE_DESKTOP } from '../styles/responsive';
+import styled from 'styled-components'
+import { PHONE, TAB_LAND, TAB_PORT, LARGE_DESKTOP } from '../styles/responsive'
 
 export const Container = styled.div`
   max-width: ${props => {
-    if (props.size === 'fluid') return '100%';
-    if (props.size === 'S') return props.theme.containerWidthS;
-    if (props.size === 'xs') return props.theme.containerWidthXs;
+    if (props.size === 'fluid') return '100%'
+    if (props.size === 'S') return props.theme.containerWidthS
+    if (props.size === 'xs') return props.theme.containerWidthXs
 
-    return props.theme.containerWidth;
+    return props.theme.containerWidth
   }};
 
   padding-top: ${({ padded }) => padded && '3.5rem'};
@@ -25,7 +25,14 @@ export const Container = styled.div`
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
-`;
+`
+export const Flex = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: ${p => (p.alignItems ? p.alignItems : 'center')};
+  justify-content: ${p => (p.justifyContent ? p.justifyContent : 'center')};
+  flex-direction: ${p => (p.flexDirection ? p.flexDirection : 'row')};
+`
 
 export const Row = styled.div`
   &::after {
@@ -33,9 +40,9 @@ export const Row = styled.div`
     clear: both;
     display: table;
   }
-`;
+`
 
-const getWidth = s => `width: ${(s / 12) * 100}%`;
+const getWidth = s => `width: ${(s / 12) * 100}%`
 
 export const Col = styled.div`
   float: left;
@@ -58,4 +65,4 @@ export const Col = styled.div`
       ${({ lg }) => lg && getWidth(lg)};
     }
   }
-`;
+`

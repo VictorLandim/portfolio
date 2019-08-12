@@ -22,15 +22,14 @@ export const Hero = styled.section`
       width: 100%;
       height: 100%;
       background: #303030 url(${noiseBg});
-      clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
-      /* clip-path: polygon(0% 0%, 0% 100%, 100% 0%); */
+      /* clip-path: polygon(0% 100%, 100% 0%, 100% 100%); */
+      clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
     }
   }
 
   @supports not (mix-blend-mode: difference) {
     background: linear-gradient(
       to bottom right,
-      ${p => p.theme.primary} 0%,
       ${p => p.theme.primary} 50%,
       ${p => p.theme.white} 50%
     );
@@ -46,9 +45,8 @@ export const Hero = styled.section`
 
     background: linear-gradient(
       to bottom right,
-      ${p => p.theme.white} 0%,
-      ${p => p.theme.white} 50%,
-      ${p => p.theme.primary} 50%
+      ${p => p.theme.primary} 50%,
+      ${p => p.theme.lightGray} 50%
     );
   }
 `
@@ -63,9 +61,8 @@ export const HeroText = styled.div`
 
     background: linear-gradient(
       to bottom right,
-      ${p => p.theme.primary} 0%,
-      ${p => p.theme.primary} 50%,
-      ${p => p.theme.white} 50%
+      ${p => p.theme.lightGray} 50%,
+      ${p => p.theme.primary} 50%
     );
     background-clip: text;
     -webkit-background-clip: text;
@@ -94,6 +91,7 @@ export const Title = styled.div`
 export const Subtitle = styled.div`
   text-align: center;
   font-size: 1.8rem;
+  font-family: 'Roboto Mono', monospace;
 
   @supports (mix-blend-mode: difference) {
     color: ${props => props.theme.white};
@@ -125,6 +123,36 @@ export const Section = styled.section`
   background-color: ${p => p.theme.lightGray};
 `
 
+export const SectionProjects = styled.section`
+  /* min-height: 100vh; */
+  /* background-image: linear-gradient(
+    to bottom right,
+    ${p => p.theme.lightGray} 85%,
+    ${p => p.theme.primary} 85%,
+    ${p => p.theme.primary} 100%,
+    ${p => p.theme.lightGray} 100%
+  ); */
+
+  position: relative;
+  background-color: ${p => p.theme.lightGray};
+  
+  &:before {
+    /* content: ${'""'}; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(
+      to bottom right,  
+      ${p => p.theme.lightGray} 45%,
+      ${p => p.theme.primary} 45%,
+      ${p => p.theme.primary} 50%,
+      ${p => p.theme.lightGray} 50%
+    );
+  }
+`
+
 export const Heading = styled.h2`
   position: relative;
   text-align: center;
@@ -134,6 +162,7 @@ export const Heading = styled.h2`
   font-weight: 700;
   font-family: 'Major Mono Display';
   padding-bottom: 1rem;
+  margin-bottom: 3rem;
 
   &::before {
     content: '';
@@ -146,18 +175,18 @@ export const Heading = styled.h2`
   }
 `
 
-export const ProjectGrid = styled.div`
+export const ToolContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-`
-
-export const InterestContainer = styled.div`
-  display: flex;
-  margin-top: 3rem;
   flex-wrap: wrap;
   justify-content: center;
+
+  & > * {
+    margin: 0 1rem;
+
+    @media ${PHONE} {
+      margin-bottom: 1rem;
+    }
+  }
 `
 
 export const ProjectMoreButton = styled.a`

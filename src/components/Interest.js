@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import { PHONE } from '../styles/responsive'
 
 const Interest = styled.p`
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: #303030;
   display: inline-block;
   margin: 0px 2rem;
-  font-family: monospace;
+  font-family: 'Roboto Mono', monospace;
   position: relative;
 
   &:not(:last-child)::before {

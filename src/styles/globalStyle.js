@@ -1,11 +1,8 @@
-import { createGlobalStyle } from 'styled-components';
-import { TAB_LAND, TAB_PORT, LARGE_DESKTOP } from './responsive';
+import { createGlobalStyle } from 'styled-components'
+import { TAB_LAND, TAB_PORT, LARGE_DESKTOP } from './responsive'
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Karla|Lato:400,500,700');
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Lato:400,500,700|Roboto+Mono:400,700|Major+Mono+Display&display=swap');
 
   *,
   *:after,
@@ -17,8 +14,17 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%; // 1rem == 10px;
-
+    /* Adjust font size */
+    -webkit-text-size-adjust: 100%;
+    /* Font varient */
+    font-variant-ligatures: none;
+    -webkit-font-variant-ligatures: none;
+    /* Smoothing */
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
 
     @media ${TAB_LAND} {
       /* width < 1200? */
@@ -39,7 +45,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: #fff;
     color: ${props => props.theme.primary};
-    font-family: 'Karla', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 400;
     box-sizing: border-box;
   }
@@ -62,4 +68,4 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: normal;
   }
   
-`;
+`

@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { TAB_PORT } from '../styles/responsive'
+import { FaGlobeAmericas, FaGithub } from 'react-icons/fa'
+
+import { TAB_PORT, PHONE } from '../styles/responsive'
 
 import phone from '../images/phone.jpg'
 
 const Container = styled.div`
-  box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 1rem;
-  margin-top: 5rem;
+  box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.3);
   position: relative;
   background-image: url(${p => p.image || phone});
   background-size: cover;
@@ -15,14 +15,22 @@ const Container = styled.div`
   background-position: center;
   min-height: 28rem;
   overflow: hidden;
+  /* flex: 0 0 50%; */
   flex: 0 0 48%;
+  border-radius: 1rem;
+  margin-bottom: 4rem;
+  transition: 0.3s all;
 
   @media ${TAB_PORT} {
     flex: 0 0 100%;
   }
 
+  @media ${PHONE} {
+    min-height: 32rem;
+  }
+
   &:before {
-    content: "''";
+    content: ${'""'};
     position: absolute;
     top: 0;
     left: 0;
@@ -36,6 +44,10 @@ const Container = styled.div`
     background-color: rgba(0, 0, 0, 0);
   }
 
+  &:hover {
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+  }
+
   @media ${TAB_PORT} {
     &:before {
       background-color: rgba(0, 0, 0, 0);
@@ -46,7 +58,7 @@ const Container = styled.div`
 const Title = styled.h2`
   color: ${p => p.theme.white};
   font-weight: 700;
-  font-size: 3.75rem;
+  font-size: 2.8rem;
   font-family: monospace;
   width: 100%;
   z-index: 999;
@@ -57,6 +69,7 @@ const Title = styled.h2`
   padding-bottom: 2rem;
   transition: 0.3s all;
   border-bottom: 2px solid currentColor;
+  font-family: 'Roboto Mono', monospace;
 
   ${Container}:hover & {
     color: ${p => p.theme.primary};
@@ -127,10 +140,15 @@ const ButtonContainer = styled.div`
 
 const ProjectButton = styled.a`
   background-color: ${p => {
-    // if (p.disabled) return 'lightgray';
+    if (p.disabled) return p.theme.gray
     if (p.inverted) return p.theme.white
     return p.theme.primary
   }};
+
+  opacity: ${p => p.disabled && '0.8'};
+
+  cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
+
 
   color: ${p => {
     if (p.inverted) return p.theme.primary
@@ -138,19 +156,17 @@ const ProjectButton = styled.a`
   }};
 
   border-radius: 0.8rem;
-  border: ${p => p.inverted && `1px solid ${p.theme.black}`};
-  flex: 0 0 45%;
+  /* border: ${p => p.inverted && `1px solid ${p.theme.black}`}; */
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 1rem 2rem;
+  justify-content: space-evenly;
+  padding: 1rem 0rem;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
   transition: 0.3s all;
-  cursor: pointer;
   text-decoration: none;
   font-size: 1.2rem;
-  font-family: monospace;
   font-weight: bold;
+  min-width: 9rem;
 
   &:not(:last-child) {
     margin-right: 2rem;
@@ -168,11 +184,11 @@ export default ({ title, description, tech = [], image, website, source }) => (
       <Description>{description}</Description>
       <TechContainer>{tech && tech.map(t => <Tech key={t}>{t}</Tech>)}</TechContainer>
       <ButtonContainer>
-        <ProjectButton href={source} target="_blank" disabled={Boolean(source)}>
-          Source
+        <ProjectButton href={source} target="_blank" disabled={!source}>
+          Source <FaGithub size={17} color={'#fff'} />
         </ProjectButton>
-        <ProjectButton inverted href={website} disabled={Boolean(website)} target="_blank">
-          Live
+        <ProjectButton inverted href={website} disabled={!website} target="_blank">
+          Live <FaGlobeAmericas size={17} color={'#202020'} />
         </ProjectButton>
       </ButtonContainer>
     </Info>
