@@ -1,14 +1,14 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Page from '../components/Page';
-import SEO from '../components/seo';
-import Project from '../components/Project';
-import Interest from '../components/Interest';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
+import Page from '../components/Page'
+import SEO from '../components/seo'
+import Project from '../components/Project'
+import Interest from '../components/Interest'
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 
-import { Container } from '../components/Layout';
+import { Container } from '../components/Layout'
 
 import {
   Heading,
@@ -21,7 +21,7 @@ import {
   InterestContainer,
   HeroText,
   ProjectMoreButton
-} from '../components/Index';
+} from '../components/Index'
 
 export const query = graphql`
   query ProjectsQuery {
@@ -46,14 +46,14 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const IndexPage = ({ data }) => {
   const projects = data.allContentfulProject.edges.map(e => ({
     ...e.node,
     description: e.node.description.description,
     image: e.node.image && e.node.image.file.url
-  }));
+  }))
 
   return (
     <>
@@ -62,7 +62,7 @@ const IndexPage = ({ data }) => {
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Hero>
           <HeroText>
-            <Title value="hi! i'm victor.">hi! i'm victor.</Title>
+            <Title value="hi! i'm victor.">hi! i'm ∇ictor.</Title>
             <Subtitle>
               fullstack developer creating web experiences at{' '}
               <ExternalLink target="_blank" href="https://aulascolmeia.com.br">
@@ -145,7 +145,7 @@ const IndexPage = ({ data }) => {
         <Footer />
       </Page>
     </>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage

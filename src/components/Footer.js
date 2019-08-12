@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const Footer = styled.footer`
   color: #fff;
@@ -10,8 +10,6 @@ const Footer = styled.footer`
   display: flex;
   font-size: 1.8rem;
   font-family: monospace;
-`;
+`
 
-export default () => (
-  <Footer>{`© ${new Date().getFullYear()}, 💻 with ❤ by Victor Landim.`}</Footer>
-);
+export default () => <Footer>{`© ${new Date().getFullYear()}, 💻 with ❤ by Victor Landim.`}</Footer>

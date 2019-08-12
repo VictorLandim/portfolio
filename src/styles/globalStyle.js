@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Karla|Lato:400,500,700');
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap');
 
   *,
   *:after,

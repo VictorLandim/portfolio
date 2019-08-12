@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import { PHONE } from '../styles/responsive';
+import styled from 'styled-components'
+import { PHONE } from '../styles/responsive'
 
 // import noiseBg from '../images/noise2.png';
-import noiseBg from '../images/noise.svg';
+import noiseBg from '../images/noise.svg'
 
 export const Hero = styled.section`
   min-height: 100vh;
@@ -51,7 +51,7 @@ export const Hero = styled.section`
       ${p => p.theme.primary} 50%
     );
   }
-`;
+`
 
 export const HeroText = styled.div`
   @media ${PHONE} {
@@ -67,10 +67,11 @@ export const HeroText = styled.div`
       ${p => p.theme.primary} 50%,
       ${p => p.theme.white} 50%
     );
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-`;
+`
 
 export const Title = styled.div`
   display: block;
@@ -88,7 +89,7 @@ export const Title = styled.div`
     line-height: 0.9;
     margin-bottom: 4rem;
   }
-`;
+`
 
 export const Subtitle = styled.div`
   text-align: center;
@@ -102,7 +103,7 @@ export const Subtitle = styled.div`
   @media ${PHONE} {
     mix-blend-mode: unset;
   }
-`;
+`
 
 export const ExternalLink = styled.a`
   text-decoration: underline;
@@ -117,12 +118,12 @@ export const ExternalLink = styled.a`
   @media ${PHONE} {
     mix-blend-mode: unset;
   }
-`;
+`
 
 export const Section = styled.section`
   /* min-height: 100vh; */
   background-color: ${p => p.theme.lightGray};
-`;
+`
 
 export const Heading = styled.h2`
   position: relative;
@@ -131,32 +132,33 @@ export const Heading = styled.h2`
   padding-bottom: 0.7rem;
   font-size: 2.5rem;
   font-weight: 700;
+  font-family: 'Major Mono Display';
+  padding-bottom: 1rem;
 
   &::before {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 2px;
-    width: 15rem;
+    height: 1px;
+    width: 20rem;
     background-color: ${props => props.theme.black};
   }
-`;
+`
 
 export const ProjectGrid = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 3rem;
-`;
+`
 
 export const InterestContainer = styled.div`
   display: flex;
   margin-top: 3rem;
   flex-wrap: wrap;
   justify-content: center;
-`;
+`
 
 export const ProjectMoreButton = styled.a`
   font-size: 1.8rem;
@@ -183,4 +185,4 @@ export const ProjectMoreButton = styled.a`
   &:hover::before {
     transform: scaleX(1);
   }
-`;
+`

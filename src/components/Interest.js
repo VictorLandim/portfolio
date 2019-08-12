@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { PHONE } from '../styles/responsive';
+import React from 'react'
+import styled from 'styled-components'
+import { PHONE } from '../styles/responsive'
 
 const Interest = styled.p`
   font-size: 2rem;
@@ -34,6 +34,6 @@ const Interest = styled.p`
       content: none;
     }
   }
-`;
+`
 
-export default Interest;
+export default Interest

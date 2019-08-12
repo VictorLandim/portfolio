@@ -20,7 +20,7 @@ const Container = styled.div`
   }
 
   &:before {
-    content: 'aa';
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
