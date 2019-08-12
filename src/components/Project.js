@@ -7,7 +7,6 @@ const Container = styled.div`
   border-radius: 1rem;
   margin-top: 5rem;
   position: relative;
-  background-image: url('https://cdn.vox-cdn.com/thumbor/0JoGwYZlVVTVel21UVcXX29O-p0=/0x0:1000x1000/1200x800/filters:focal(420x420:580x580)/cdn.vox-cdn.com/uploads/chorus_image/image/60128889/Hinge_AppScreen1.0.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
