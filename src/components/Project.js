@@ -2,11 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { TAB_PORT } from '../styles/responsive'
 
+import phone from '../images/phone.jpg'
+
 const Container = styled.div`
   box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   margin-top: 5rem;
   position: relative;
+  background-image: url(${p => p.image || phone});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -17,23 +20,26 @@ const Container = styled.div`
   @media ${TAB_PORT} {
     flex: 0 0 100%;
   }
-`
 
-const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  transition: 0.3s all;
+  &:before {
+    content: "''";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: 0.3s all;
+  }
 
-  ${Container}:hover & {
+  &:hover:before {
     background-color: rgba(0, 0, 0, 0);
   }
 
   @media ${TAB_PORT} {
-    background-color: rgba(0, 0, 0, 0);
+    &:before {
+      background-color: rgba(0, 0, 0, 0);
+    }
   }
 `
 
@@ -156,8 +162,7 @@ const ProjectButton = styled.a`
 `
 
 export default ({ title, description, tech = [], image, website, source }) => (
-  <Container>
-    <Overlay />
+  <Container image={image}>
     <Title>{title}</Title>
     <Info>
       <Description>{description}</Description>
