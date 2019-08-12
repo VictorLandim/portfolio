@@ -22,8 +22,13 @@ const Interest = styled.p`
   }
 
   @media ${PHONE} {
-    flex: 1;
-    width: 100%;
+    flex: 0 0 100%;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    /* width: 100%; */
 
     &:not(:last-child)::before {
       content: none;

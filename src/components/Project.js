@@ -7,7 +7,6 @@ const Container = styled.div`
   border-radius: 1rem;
   margin-top: 5rem;
   position: relative;
-  /* background-image: url(${p => p.image}); */
   background-image: url('https://cdn.vox-cdn.com/thumbor/0JoGwYZlVVTVel21UVcXX29O-p0=/0x0:1000x1000/1200x800/filters:focal(420x420:580x580)/cdn.vox-cdn.com/uploads/chorus_image/image/60128889/Hinge_AppScreen1.0.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -18,14 +17,10 @@ const Container = styled.div`
 
   @media ${TAB_PORT} {
     flex: 0 0 100%;
-
-    &:before {
-      background-color: rgba(0, 0, 0, 0);
-    }
   }
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -37,6 +32,12 @@ const Container = styled.div`
 
   &:hover:before {
     background-color: rgba(0, 0, 0, 0);
+  }
+
+  @media ${TAB_PORT} {
+    &:before {
+      background-color: rgba(0, 0, 0, 0);
+    }
   }
 `;
 
@@ -163,7 +164,7 @@ export default ({ title, description, tech = [], image, website, source }) => (
     <Title>{title}</Title>
     <Info>
       <Description>{description}</Description>
-      <TechContainer>{tech && tech.map(t => <Tech>{t}</Tech>)}</TechContainer>
+      <TechContainer>{tech && tech.map(t => <Tech key={t}>{t}</Tech>)}</TechContainer>
       <ButtonContainer>
         <ProjectButton href={source} target="_blank" disabled={Boolean(source)}>
           Source

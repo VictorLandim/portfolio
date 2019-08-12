@@ -7,8 +7,8 @@ export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Text:400,700&display=swap');
 
   *,
-  *::after,
-  *::before {
+  *:after,
+  *:before {
     margin: 0;
     padding: 0;
     box-sizing: inherit;

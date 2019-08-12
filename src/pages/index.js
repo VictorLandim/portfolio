@@ -65,7 +65,10 @@ const IndexPage = ({ data }) => {
             <Title value="hi! i'm victor.">hi! i'm victor.</Title>
             <Subtitle>
               fullstack developer creating web experiences at{' '}
-              <ExternalLink href="https://aulascolmeia.com.br">Colmeia</ExternalLink>.
+              <ExternalLink target="_blank" href="https://aulascolmeia.com.br">
+                Colmeia
+              </ExternalLink>
+              .
             </Subtitle>
           </HeroText>
         </Hero>
@@ -94,7 +97,7 @@ const IndexPage = ({ data }) => {
                   <Project key={project.id} {...project} />
                 ))}
             </ProjectGrid>
-            <ProjectMoreButton href="https://github.com/VictorLandim">
+            <ProjectMoreButton target="_blank" href="https://github.com/VictorLandim">
               View more on GitHub &rarr;
             </ProjectMoreButton>
           </Container>
