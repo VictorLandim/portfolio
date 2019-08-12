@@ -18,27 +18,6 @@ const Container = styled.div`
   @media ${TAB_PORT} {
     flex: 0 0 100%;
   }
-
-  /* &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    transition: 0.3s all;
-  }
-
-  &:hover:before {
-    background-color: rgba(0, 0, 0, 0);
-  }
-
-  @media ${TAB_PORT} {
-    &:before {
-      background-color: rgba(0, 0, 0, 0);
-    }
-  } */
 `
 
 const Overlay = styled.div`
