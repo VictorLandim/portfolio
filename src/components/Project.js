@@ -15,29 +15,28 @@ const Container = styled.div`
   min-height: 28rem;
   overflow: hidden;
   flex: 0 0 48%;
-  /* flex: 0 0 30%; */
-
-  &:before {
-    content: "${' '}";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.6);
-    transition: 0.3s all;
-  }
-
-  &:hover:before {
-    background: none;
-  }
 
   @media ${TAB_PORT} {
     flex: 0 0 100%;
 
     &:before {
-      background: none;
+      background-color: rgba(0, 0, 0, 0);
     }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: 0.3s all;
+  }
+
+  &:hover:before {
+    background-color: rgba(0, 0, 0, 0);
   }
 `;
 
