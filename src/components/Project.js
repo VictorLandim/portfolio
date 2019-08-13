@@ -9,10 +9,10 @@ import phone from '../images/phone.jpg'
 const Container = styled.div`
   box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.3);
   position: relative;
-  background-image: url(${p => p.image || phone});
-  background-size: cover;
+  background: #fff url(${p => p.image || phone});
+  background-size: ${p => (p.isApp ? '150%' : 'cover')};
+  background-position: ${p => (p.isApp ? 'center 5px' : 'center')};
   background-repeat: no-repeat;
-  background-position: center;
   min-height: 28rem;
   overflow: hidden;
   /* flex: 0 0 50%; */
@@ -98,6 +98,8 @@ const Info = styled.aside`
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
+  border-left: 2px solid currentColor;
+  /* box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2); */
 
   ${Container}:hover & {
     transform: translateX(0);
@@ -177,8 +179,8 @@ const ProjectButton = styled.a`
   }
 `
 
-export default ({ title, description, tech = [], image, website, source }) => (
-  <Container image={image}>
+export default ({ title, description, tech = [], image, website, source, isApp }) => (
+  <Container image={image} isApp={isApp}>
     <Title>{title}</Title>
     <Info>
       <Description>{description}</Description>

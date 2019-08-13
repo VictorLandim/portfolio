@@ -55,6 +55,7 @@ export const query = graphql`
           source
           website
           isWork
+          isApp
           image {
             file {
               url
@@ -73,6 +74,8 @@ const IndexPage = ({ data }) => {
     image: e.node.image && e.node.image.file.url
   }))
 
+  console.log(projects)
+
   return (
     <>
       {/* <Nav /> */}
@@ -80,9 +83,10 @@ const IndexPage = ({ data }) => {
         <SEO title="Home" keywords={[`victor`, `landim`, `web`, `developer`, `portfolio`]} />
         <Hero>
           <HeroText>
-            <Title value="hi! i'm victor.">hi! i'm ∇ictor.</Title>
+            <Title>hi! i'm ∇ictor.</Title>
             <Subtitle>
-              fullstack developer crafting web experiences at{' '}
+              university of brasília undergraduate and <br /> fullstack developer crafting web
+              experiences at{' '}
               <ExternalLink target="_blank" href="https://aulascolmeia.com.br">
                 Colmeia
               </ExternalLink>
