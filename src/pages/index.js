@@ -8,7 +8,7 @@ import Interest from '../components/Interest'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 
-import SocialLink from '../components/SocialLink'
+import { ExternalLink, SocialLink } from '../components/Link'
 
 import { Container, Flex } from '../components/Layout'
 
@@ -35,11 +35,7 @@ import {
   SectionProjects,
   Subtitle,
   Title,
-  ExternalLink,
-  ProjectGrid,
-  InterestContainer,
   HeroText,
-  ProjectMoreButton,
   ToolContainer
 } from '../components/Index'
 
@@ -57,6 +53,7 @@ export const query = graphql`
           source
           website
           isWork
+          order
           isApp
           image {
             file {
@@ -70,13 +67,14 @@ export const query = graphql`
 `
 
 const IndexPage = ({ data }) => {
-  const projects = data.allContentfulProject.edges.map(e => ({
+  const allProjects = data.allContentfulProject.edges.map(e => ({
     ...e.node,
     description: e.node.description.description,
     image: e.node.image && e.node.image.file.url
   }))
 
-  console.log(projects)
+  const work = allProjects.filter(p => p.isWork).sort((a, b) => a.order - b.order)
+  const projects = allProjects.filter(p => !p.isWork).sort((a, b) => a.order - b.order)
 
   return (
     <>
@@ -89,9 +87,9 @@ const IndexPage = ({ data }) => {
             <Subtitle>
               university of brasília undergraduate and <br /> fullstack developer crafting web
               experiences at{' '}
-              <ExternalLink target="_blank" href="https://aulascolmeia.com.br">
+              <a target="_blank" href="https://aulascolmeia.com.br">
                 Colmeia
-              </ExternalLink>
+              </a>
               .
             </Subtitle>
           </HeroText>
@@ -100,12 +98,9 @@ const IndexPage = ({ data }) => {
           <Container padded>
             <Heading>Work</Heading>
             <Flex justifyContent="space-between">
-              {projects
-                .filter(p => p.isWork)
-                .reverse()
-                .map(project => (
-                  <Project key={project.id} {...project} />
-                ))}
+              {work.map(project => (
+                <Project key={project.id} {...project} />
+              ))}
             </Flex>
           </Container>
         </SectionProjects>
@@ -113,16 +108,13 @@ const IndexPage = ({ data }) => {
           <Container padded>
             <Heading>Projects</Heading>
             <Flex justifyContent="space-between">
-              {projects
-                .filter(p => !p.isWork)
-                .reverse()
-                .map(project => (
-                  <Project key={project.id} {...project} />
-                ))}
+              {projects.map(project => (
+                <Project key={project.id} {...project} />
+              ))}
             </Flex>
-            <ProjectMoreButton target="_blank" href="https://github.com/VictorLandim">
+            <ExternalLink target="_blank" href="https://github.com/VictorLandim">
               View more on GitHub &rarr;
-            </ProjectMoreButton>
+            </ExternalLink>
           </Container>
         </SectionProjects>
 

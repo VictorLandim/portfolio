@@ -107,20 +107,20 @@ export const Subtitle = styled.div`
       display: none;
     }
   }
-`
 
-export const ExternalLink = styled.a`
-  text-decoration: underline;
-  cursor: pointer;
-  /* display: inline-block; */
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+    /* display: inline-block; */
 
-  @supports (mix-blend-mode: difference) {
-    color: ${props => props.theme.white};
-    mix-blend-mode: difference;
-  }
+    @supports (mix-blend-mode: difference) {
+      color: ${props => props.theme.white};
+      mix-blend-mode: difference;
+    }
 
-  @media ${PHONE} {
-    mix-blend-mode: unset;
+    @media ${PHONE} {
+      mix-blend-mode: unset;
+    }
   }
 `
 
@@ -192,32 +192,5 @@ export const ToolContainer = styled.div`
     @media ${PHONE} {
       margin-bottom: 1rem;
     }
-  }
-`
-
-export const ProjectMoreButton = styled.a`
-  font-size: 1.8rem;
-  margin-top: 5rem;
-  color: ${p => p.theme.primary};
-  display: inline-block;
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 1rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    transform: scaleX(0);
-    transform-origin: left;
-    background-color: ${p => p.theme.primary};
-    transition: 0.3s all;
-  }
-
-  &:hover::before {
-    transform: scaleX(1);
   }
 `
