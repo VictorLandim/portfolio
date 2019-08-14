@@ -1,15 +1,21 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const SocialLink = styled.a`
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: ${p => p.theme.primary};
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   position: relative;
   text-decoration: none;
   padding-bottom: 1rem;
-  margin: 0 0.5rem;
+  margin: 0 2rem;
   font-family: 'Roboto Mono', monospace;
+  cursor: pointer;
+
+  svg {
+    margin-left: 1rem;
+  }
 
   &:before {
     content: '';

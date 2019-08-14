@@ -53,6 +53,33 @@ const Container = styled.div`
       background-color: rgba(0, 0, 0, 0);
     }
   }
+
+  @media ${PHONE} {
+    margin-top: 25rem;
+    overflow: initial;
+    background-image: none;
+
+    &:before {
+      top: -24.5rem;
+      height: 25rem;
+      background: red;
+      background: ${p => p.theme.white} url(${p => p.image || phone});
+      background-size: ${p => (p.isApp ? '150%' : 'contain')};
+      background-position: ${p => (p.isApp ? 'center 5px' : 'center')};
+      background-repeat: no-repeat;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover {
+      box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover:before {
+      background-color: ${p => p.theme.white};
+    }
+  }
 `
 
 const Title = styled.h2`
@@ -82,6 +109,14 @@ const Title = styled.h2`
     transform: translateX(20%);
     color: ${p => p.theme.primary};
   }
+
+  @media ${PHONE} {
+    transform: translateX(0);
+
+    ${Container}:hover & {
+      transform: translateX(0);
+    }
+  }
 `
 
 const Info = styled.aside`
@@ -107,6 +142,14 @@ const Info = styled.aside`
 
   @media ${TAB_PORT} {
     transform: unset;
+  }
+
+  @media ${PHONE} {
+    width: 100%;
+    border-left: none;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: ${p => p.theme.white};
   }
 `
 

@@ -85,6 +85,7 @@ export const Title = styled.div`
     mix-blend-mode: unset;
     line-height: 0.9;
     margin-bottom: 4rem;
+    font-size: 10rem;
   }
 `
 
@@ -100,6 +101,11 @@ export const Subtitle = styled.div`
 
   @media ${PHONE} {
     mix-blend-mode: unset;
+    padding: 0 5rem;
+
+    & > br {
+      display: none;
+    }
   }
 `
 

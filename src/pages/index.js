@@ -26,6 +26,8 @@ import {
   DiVisualstudio
 } from 'react-icons/di'
 
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
+
 import {
   Heading,
   Hero,
@@ -167,9 +169,18 @@ const IndexPage = ({ data }) => {
           <Container padded>
             <Heading>Find me</Heading>
             <Flex>
-              <SocialLink>Github</SocialLink>
-              <SocialLink>Email</SocialLink>
-              <SocialLink>LinkedIn</SocialLink>
+              <SocialLink href="mailto:victorlandim5@gmail.com" target="_blank">
+                Email <FaEnvelope size={18} color={'#202020'} />
+              </SocialLink>
+              <SocialLink href="https://github.com/victorLandim/" target="_blank">
+                Github <FaGithub size={18} color={'#202020'} />
+              </SocialLink>
+              <SocialLink
+                href="https://www.linkedin.com/in/victor-landim-95080b135/"
+                target="_blank"
+              >
+                LinkedIn <FaLinkedin size={18} color={'#202020'} />
+              </SocialLink>
             </Flex>
           </Container>
         </Section>

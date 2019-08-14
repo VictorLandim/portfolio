@@ -67,5 +67,11 @@ export const GlobalStyle = createGlobalStyle`
   p {
     font-weight: normal;
   }
-  
+
+  ::selection {
+    background: #64b5f6; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    background: #64b5f6; /* Gecko Browsers */
+  }
 `
