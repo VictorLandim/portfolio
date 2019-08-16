@@ -26,7 +26,7 @@ import {
   DiVisualstudio
 } from 'react-icons/di'
 
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaEnvelope, FaGithub, FaLinkedin, FaCodepen } from 'react-icons/fa'
 
 import {
   Heading,
@@ -94,6 +94,11 @@ const IndexPage = ({ data }) => {
             </Subtitle>
           </HeroText>
         </Hero>
+        {/* <Section>
+          <Container padded>
+            <Heading>Bio</Heading>
+          </Container>
+        </Section> */}
         <SectionProjects>
           <Container padded>
             <Heading>Work</Heading>
@@ -120,6 +125,25 @@ const IndexPage = ({ data }) => {
 
         <Section>
           <Container padded>
+            <Heading>Toolbox</Heading>
+            <ToolContainer>
+              <DiCss3 size={40} color={'#202020'} />
+              <DiGit size={40} color={'#202020'} />
+              <DiGulp size={40} color={'#202020'} />
+              <DiHtml5 size={40} color={'#202020'} />
+              <DiJsBadge size={40} color={'#202020'} />
+              <DiMongodb size={40} color={'#202020'} />
+              <DiNodejs size={40} color={'#202020'} />
+              <DiReact size={40} color={'#202020'} />
+              <DiSass size={40} color={'#202020'} />
+              <DiTerminal size={40} color={'#202020'} />
+              <DiVisualstudio size={40} color={'#202020'} />
+            </ToolContainer>
+          </Container>
+        </Section>
+
+        <Section>
+          <Container padded>
             <Heading>Interests</Heading>
             <Flex>
               {[
@@ -140,38 +164,22 @@ const IndexPage = ({ data }) => {
 
         <Section>
           <Container padded>
-            <Heading>Toolbox</Heading>
-            <ToolContainer>
-              <DiCss3 size={40} color={'#202020'} />
-              <DiGit size={40} color={'#202020'} />
-              <DiGulp size={40} color={'#202020'} />
-              <DiHtml5 size={40} color={'#202020'} />
-              <DiJsBadge size={40} color={'#202020'} />
-              <DiMongodb size={40} color={'#202020'} />
-              <DiNodejs size={40} color={'#202020'} />
-              <DiReact size={40} color={'#202020'} />
-              <DiSass size={40} color={'#202020'} />
-              <DiTerminal size={40} color={'#202020'} />
-              <DiVisualstudio size={40} color={'#202020'} />
-            </ToolContainer>
-          </Container>
-        </Section>
-
-        <Section>
-          <Container padded>
             <Heading>Find me</Heading>
             <Flex>
               <SocialLink href="mailto:victorlandim5@gmail.com" target="_blank">
                 Email <FaEnvelope size={18} color={'#202020'} />
-              </SocialLink>
-              <SocialLink href="https://github.com/victorLandim/" target="_blank">
-                Github <FaGithub size={18} color={'#202020'} />
               </SocialLink>
               <SocialLink
                 href="https://www.linkedin.com/in/victor-landim-95080b135/"
                 target="_blank"
               >
                 LinkedIn <FaLinkedin size={18} color={'#202020'} />
+              </SocialLink>
+              <SocialLink href="https://github.com/victorLandim/" target="_blank">
+                Github <FaGithub size={18} color={'#202020'} />
+              </SocialLink>
+              <SocialLink href="https://codepen.io/victorlandim" target="_blank">
+                CodePen <FaCodepen size={18} color={'#202020'} />
               </SocialLink>
             </Flex>
           </Container>

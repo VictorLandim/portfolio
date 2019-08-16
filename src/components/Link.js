@@ -1,7 +1,8 @@
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import styled from 'styled-components'
 import { PHONE } from '../styles/responsive'
 
-const ExternalLink = styled.a`
+const ExternalLink = styled(OutboundLink)`
   font-family: 'Roboto Mobo', monospace;
   font-size: 1.75rem;
   color: ${p => p.theme.primary};

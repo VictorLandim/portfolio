@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Victor Landim Portfolio`,
-    description: `Victor Landim Portfolio`,
+    title: `Victor Landim`,
+    description: `university of brasília undergraduate and 
+    fullstack developer crafting web experiences at Colmeia.`,
     author: `@victorlandim  `
   },
   plugins: [
@@ -34,9 +35,15 @@ module.exports = {
         icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
       }
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-145822869-1'
+      }
+    }
   ]
-};
+}
