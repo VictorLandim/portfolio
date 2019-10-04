@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PHONE } from '../styles/responsive'
+import { PHONE } from '../../../styles/responsive'
 
 const Interest = styled.p`
   font-size: 1.4rem;

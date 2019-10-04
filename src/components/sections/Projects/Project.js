@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { FaGlobeAmericas, FaGithub } from 'react-icons/fa'
 
-import { TAB_PORT, PHONE } from '../styles/responsive'
+import { TAB_PORT, PHONE } from '../../../styles/responsive'
 
-import phone from '../images/phone.jpg'
+import phone from '../../../data/images/phone.jpg'
 
 const Container = styled.div`
   box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.3);

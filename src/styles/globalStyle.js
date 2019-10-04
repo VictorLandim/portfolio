@@ -12,6 +12,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
+  html, body { 
+    height: 100%; 
+  }
+
   html {
     font-size: 62.5%; // 1rem == 10px;
     /* Adjust font size */

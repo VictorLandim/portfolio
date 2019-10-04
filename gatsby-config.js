@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Victor Landim`,
+    title: `Victor Landim | Full Stack Web Developer`,
     description: `university of brasília undergraduate and 
     fullstack developer crafting web experiences at Colmeia.`,
     author: `@victorlandim  `
@@ -18,7 +18,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
+        path: `${__dirname}/src/data`
       }
     },
     `gatsby-transformer-sharp`,
@@ -32,7 +32,7 @@ module.exports = {
         background_color: `#202020`,
         theme_color: `#202020`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+        icon: `src/data/images/icon.png` // This path is relative to the root of the site.
       }
     },
     `gatsby-plugin-styled-components`,

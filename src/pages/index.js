@@ -3,44 +3,17 @@ import { graphql } from 'gatsby'
 
 import Page from '../components/Page'
 import SEO from '../components/seo'
-import Project from '../components/Project'
-import Interest from '../components/Interest'
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
 
-import { ExternalLink, SocialLink } from '../components/Link'
-
-import { Container, Flex } from '../components/Layout'
-
-import {
-  DiCss3,
-  DiGit,
-  DiGulp,
-  DiHtml5,
-  DiJsBadge,
-  DiMongodb,
-  DiNodejs,
-  DiReact,
-  DiSass,
-  DiTerminal,
-  DiVisualstudio
-} from 'react-icons/di'
-
-import { FaEnvelope, FaGithub, FaLinkedin, FaCodepen } from 'react-icons/fa'
-
-import {
-  Heading,
-  Hero,
-  Section,
-  SectionProjects,
-  Subtitle,
-  Title,
-  HeroText,
-  ToolContainer
-} from '../components/Index'
+import SectionHero from '../components/sections/Hero'
+import SectionBio from '../components/sections/Bio'
+import SectionProjects from '../components/sections/Projects'
+import SectionTools from '../components/sections/Tools'
+import SectionInterests from '../components/sections/Interests'
+import SectionContact from '../components/sections/Contact'
+import SectionFooter from '../components/sections/Footer'
 
 export const query = graphql`
-  query ProjectsQuery {
+  query {
     allContentfulProject {
       edges {
         node {
@@ -80,112 +53,36 @@ const IndexPage = ({ data }) => {
     <>
       {/* <Nav /> */}
       <Page>
-        <SEO title="Home" keywords={[`victor`, `landim`, `web`, `developer`, `portfolio`]} />
-        <Hero>
-          <HeroText>
-            <Title>hi! i'm ∇ictor.</Title>
-            <Subtitle>
-              university of brasília undergraduate and <br /> fullstack developer crafting web
-              experiences at{' '}
-              <a target="_blank" href="https://aulascolmeia.com.br">
-                Colmeia
-              </a>
-              .
-            </Subtitle>
-          </HeroText>
-        </Hero>
-        {/* <Section>
-          <Container padded>
-            <Heading>Bio</Heading>
-          </Container>
-        </Section> */}
-        <SectionProjects>
-          <Container padded>
-            <Heading>Work</Heading>
-            <Flex justifyContent="space-between">
-              {work.map(project => (
-                <Project key={project.id} {...project} />
-              ))}
-            </Flex>
-          </Container>
-        </SectionProjects>
-        <SectionProjects>
-          <Container padded>
-            <Heading>Projects</Heading>
-            <Flex justifyContent="space-between">
-              {projects.map(project => (
-                <Project key={project.id} {...project} />
-              ))}
-            </Flex>
-            <ExternalLink target="_blank" href="https://github.com/VictorLandim">
-              View more on GitHub &rarr;
-            </ExternalLink>
-          </Container>
-        </SectionProjects>
+        <SEO title="Home" keywords={[`victor`, `landim`, `web`, `developer`, `portfolio`, `skills`, `programming`, `fullstack`, `frontend`]} />
+        <SectionHero />
+        <SectionBio />
 
-        <Section>
-          <Container padded>
-            <Heading>Toolbox</Heading>
-            <ToolContainer>
-              <DiCss3 size={40} color={'#202020'} />
-              <DiGit size={40} color={'#202020'} />
-              <DiGulp size={40} color={'#202020'} />
-              <DiHtml5 size={40} color={'#202020'} />
-              <DiJsBadge size={40} color={'#202020'} />
-              <DiMongodb size={40} color={'#202020'} />
-              <DiNodejs size={40} color={'#202020'} />
-              <DiReact size={40} color={'#202020'} />
-              <DiSass size={40} color={'#202020'} />
-              <DiTerminal size={40} color={'#202020'} />
-              <DiVisualstudio size={40} color={'#202020'} />
-            </ToolContainer>
-          </Container>
-        </Section>
+        <SectionProjects data={work} heading="Work" />
+        <SectionProjects data={projects} heading="Projects" showGithub />
 
-        <Section>
-          <Container padded>
-            <Heading>Interests</Heading>
-            <Flex>
-              {[
-                'Game Development',
-                'Computer Graphics',
-                'Functional Programming',
-                'Music Theory',
-                'Photography',
-                'Design',
-                'Calligraphy',
-                'Linguistics'
-              ].map(interest => (
-                <Interest key={interest}>{interest}</Interest>
-              ))}
-            </Flex>
-          </Container>
-        </Section>
+        <SectionTools />
 
-        <Section>
-          <Container padded>
-            <Heading>Find me</Heading>
-            <Flex>
-              <SocialLink href="mailto:victorlandim5@gmail.com" target="_blank">
-                Email <FaEnvelope size={18} color={'#202020'} />
-              </SocialLink>
-              <SocialLink
-                href="https://www.linkedin.com/in/victor-landim-95080b135/"
-                target="_blank"
-              >
-                LinkedIn <FaLinkedin size={18} color={'#202020'} />
-              </SocialLink>
-              <SocialLink href="https://github.com/victorLandim/" target="_blank">
-                Github <FaGithub size={18} color={'#202020'} />
-              </SocialLink>
-              <SocialLink href="https://codepen.io/victorlandim" target="_blank">
-                CodePen <FaCodepen size={18} color={'#202020'} />
-              </SocialLink>
-            </Flex>
-          </Container>
-        </Section>
+        <SectionInterests
+          heading="Skills"
+          data={['C/C++', 'CSS3/Sass', 'React', 'React Native', 'HTML5', 'Javascript/ES6', 'Node.js/Express.js', 'MongoDB', 'Parse Server', 'Google Firebase', 'Java', 'LibGDX', 'PostgreSQL', 'Python']}
+        />
 
-        <Footer />
+        <SectionInterests
+          heading="Interests"
+          data={[
+            'Game Development',
+            'Computer Graphics',
+            'Functional Programming',
+            'Music Theory',
+            'Photography',
+            'Design',
+            'Calligraphy',
+            'Linguistics'
+          ]}
+        />
+
+        <SectionContact />
+        <SectionFooter />
       </Page>
     </>
   )

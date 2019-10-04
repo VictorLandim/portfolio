@@ -4,7 +4,7 @@ import { PHONE, TAB_LAND, TAB_PORT, LARGE_DESKTOP } from '../styles/responsive'
 export const Container = styled.div`
   max-width: ${props => {
     if (props.size === 'fluid') return '100%'
-    if (props.size === 'S') return props.theme.containerWidthS
+    if (props.size === 's') return props.theme.containerWidthS
     if (props.size === 'xs') return props.theme.containerWidthXs
 
     return props.theme.containerWidth
@@ -32,6 +32,10 @@ export const Flex = styled.div`
   align-items: ${p => (p.alignItems ? p.alignItems : 'center')};
   justify-content: ${p => (p.justifyContent ? p.justifyContent : 'center')};
   flex-direction: ${p => (p.flexDirection ? p.flexDirection : 'row')};
+
+  @media ${PHONE} {
+    flex-direction: ${p => (p.mobileColumn ? 'column' : 'initial')};
+  }
 `
 
 export const Row = styled.div`

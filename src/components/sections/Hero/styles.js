@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { PHONE } from '../styles/responsive'
 
-// import noiseBg from '../images/noise2.png';
-import noiseBg from '../images/noise.svg'
+import { PHONE } from '../../../styles/responsive'
 
-export const Hero = styled.section`
+import noiseBg from '../../../data/images/noise.svg'
+
+export const HeroContainer = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -120,77 +120,6 @@ export const Subtitle = styled.div`
 
     @media ${PHONE} {
       mix-blend-mode: unset;
-    }
-  }
-`
-
-export const Section = styled.section`
-  /* min-height: 100vh; */
-  background-color: ${p => p.theme.lightGray};
-`
-
-export const SectionProjects = styled.section`
-  /* min-height: 100vh; */
-  /* background-image: linear-gradient(
-    to bottom right,
-    ${p => p.theme.lightGray} 85%,
-    ${p => p.theme.primary} 85%,
-    ${p => p.theme.primary} 100%,
-    ${p => p.theme.lightGray} 100%
-  ); */
-
-  position: relative;
-  background-color: ${p => p.theme.lightGray};
-  
-  &:before {
-    /* content: ${'""'}; */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(
-      to bottom right,  
-      ${p => p.theme.lightGray} 45%,
-      ${p => p.theme.primary} 45%,
-      ${p => p.theme.primary} 50%,
-      ${p => p.theme.lightGray} 50%
-    );
-  }
-`
-
-export const Heading = styled.h2`
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  padding-bottom: 0.7rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-  font-family: 'Major Mono Display';
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    width: 20rem;
-    background-color: ${props => props.theme.black};
-  }
-`
-
-export const ToolContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  & > * {
-    margin: 0 1rem;
-
-    @media ${PHONE} {
-      margin-bottom: 1rem;
     }
   }
 `
