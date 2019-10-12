@@ -53,7 +53,20 @@ const IndexPage = ({ data }) => {
     <>
       {/* <Nav /> */}
       <Page>
-        <SEO title="Home" keywords={[`victor`, `landim`, `web`, `developer`, `portfolio`, `skills`, `programming`, `fullstack`, `frontend`]} />
+        <SEO
+          title="Home"
+          keywords={[
+            `victor`,
+            `landim`,
+            `web`,
+            `developer`,
+            `portfolio`,
+            `skills`,
+            `programming`,
+            `fullstack`,
+            `frontend`
+          ]}
+        />
         <SectionHero />
         <SectionBio />
 
@@ -64,7 +77,22 @@ const IndexPage = ({ data }) => {
 
         <SectionInterests
           heading="Skills"
-          data={['C/C++', 'CSS3/Sass', 'React', 'React Native', 'HTML5', 'Javascript/ES6', 'Node.js/Express.js', 'MongoDB', 'Parse Server', 'Google Firebase', 'Java', 'LibGDX', 'PostgreSQL', 'Python']}
+          data={[
+            'C/C++',
+            'CSS3/Sass',
+            'React',
+            'React Native',
+            'HTML5',
+            'Javascript/ES6',
+            'Node.js/Express.js',
+            'MongoDB',
+            'Parse Server',
+            'Google Firebase',
+            'Java',
+            'LibGDX',
+            'PostgreSQL',
+            'Python'
+          ]}
         />
 
         <SectionInterests

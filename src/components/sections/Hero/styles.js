@@ -7,6 +7,7 @@ import noiseBg from '../../../data/images/noise.svg'
 const HeroAnimation = keyframes`
   0% {
     clip-path: polygon(0% 0%, 0% 0%, 100% 0%);
+    
   }
 
   100% {
@@ -37,6 +38,7 @@ export const HeroContainer = styled.section`
   @supports (mix-blend-mode: difference) {
     &::before {
       content: '';
+      /* position: fixed; */
       position: absolute;
       top: 0;
       left: 0;
@@ -59,7 +61,7 @@ export const HeroContainer = styled.section`
     -webkit-text-fill-color: transparent;
   }
 
-  /* @media ${PHONE} {
+  @media ${PHONE} {
     &::before {
       content: none;
     }
@@ -69,7 +71,7 @@ export const HeroContainer = styled.section`
       ${p => p.theme.primary} 50%,
       ${p => p.theme.lightGray} 50%
     );
-  } */
+  }
 `
 
 export const HeroText = styled.div`
