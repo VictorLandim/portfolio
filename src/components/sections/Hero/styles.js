@@ -1,8 +1,29 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import { PHONE } from '../../../styles/responsive'
 
 import noiseBg from '../../../data/images/noise.svg'
+
+const HeroAnimation = keyframes`
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 100% 0%);
+  }
+
+  100% {
+    clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
+  }
+
+`
+
+const TextAnimation = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`
 
 export const HeroContainer = styled.section`
   min-height: 100vh;
@@ -22,8 +43,8 @@ export const HeroContainer = styled.section`
       width: 100%;
       height: 100%;
       background: #303030 url(${noiseBg});
-      /* clip-path: polygon(0% 100%, 100% 0%, 100% 100%); */
       clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
+      animation: ${HeroAnimation} 1s ease-out;
     }
   }
 
@@ -38,7 +59,7 @@ export const HeroContainer = styled.section`
     -webkit-text-fill-color: transparent;
   }
 
-  @media ${PHONE} {
+  /* @media ${PHONE} {
     &::before {
       content: none;
     }
@@ -48,7 +69,7 @@ export const HeroContainer = styled.section`
       ${p => p.theme.primary} 50%,
       ${p => p.theme.lightGray} 50%
     );
-  }
+  } */
 `
 
 export const HeroText = styled.div`
@@ -75,6 +96,9 @@ export const Title = styled.div`
   font-weight: bold;
   text-align: center;
   font-size: 12rem;
+  font-family: 'Lato', sans-serif;
+
+  /* animation: ${TextAnimation} 1s ease-out; */
 
   @supports (mix-blend-mode: difference) {
     color: ${props => props.theme.white};
@@ -94,6 +118,8 @@ export const Subtitle = styled.div`
   font-size: 1.8rem;
   font-family: 'Roboto Mono', monospace;
 
+  /* animation: ${TextAnimation} 1s ease-out; */
+
   @supports (mix-blend-mode: difference) {
     color: ${props => props.theme.white};
     mix-blend-mode: difference;
@@ -111,7 +137,7 @@ export const Subtitle = styled.div`
   a {
     text-decoration: underline;
     cursor: pointer;
-    /* display: inline-block; */
+    display: inline-block;
 
     @supports (mix-blend-mode: difference) {
       color: ${props => props.theme.white};

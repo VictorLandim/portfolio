@@ -6,6 +6,7 @@ module.exports = {
     author: `@victorlandim  `
   },
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-contentful`,
       options: {

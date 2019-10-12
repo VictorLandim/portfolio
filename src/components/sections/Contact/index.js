@@ -11,7 +11,7 @@ export default () => (
     <Container padded>
       <SectionHeading>Find me</SectionHeading>
       <Flex>
-        <SocialLink href="mailto:victorlandim5@gmail.com" target="_blank">
+        <SocialLink href="mailto:hi@victorlandim.com" target="_blank">
           Email <FaEnvelope size={18} color={'#202020'} />
         </SocialLink>
         <SocialLink href="https://www.linkedin.com/in/victor-landim-95080b135/" target="_blank">

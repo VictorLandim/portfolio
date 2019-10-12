@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import { PHONE } from '../../../styles/responsive'
 
@@ -39,5 +40,33 @@ export const BioText = styled.p`
 
   @media ${PHONE} {
     margin-right: 0;
+  }
+`
+
+export const ResumeLink = styled(OutboundLink)`
+  font-family: 'Roboto Mobo', monospace;
+  font-size: 1.75rem;
+  color: ${p => p.theme.primary};
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 1rem;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform-origin: left;
+    background-color: ${p => p.theme.primary};
+    transition: 0.3s all;
+  }
+
+  svg {
+    margin-right: 1rem;
   }
 `
