@@ -139,7 +139,7 @@ export const Subtitle = styled.div`
   a {
     text-decoration: underline;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
 
     @supports (mix-blend-mode: difference) {
       color: ${props => props.theme.white};
