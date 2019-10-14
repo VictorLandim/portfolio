@@ -100,7 +100,7 @@ export const Title = styled.div`
   font-size: 12rem;
   font-family: 'Lato', sans-serif;
 
-  animation: ${TextAnimation} 1s ease-out;
+  /* animation: ${TextAnimation} 1s ease-out; */
 
   @supports (mix-blend-mode: difference) {
     color: ${props => props.theme.white};
@@ -120,7 +120,7 @@ export const Subtitle = styled.div`
   font-size: 1.8rem;
   font-family: 'Roboto Mono', monospace;
 
-  animation: ${TextAnimation} 1s ease-out;
+  /* animation: ${TextAnimation} 1s ease-out; */
 
   @supports (mix-blend-mode: difference) {
     color: ${props => props.theme.white};
