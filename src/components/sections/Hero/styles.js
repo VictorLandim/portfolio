@@ -46,7 +46,7 @@ export const HeroContainer = styled.section`
       height: 100%;
       background: #303030 url(${noiseBg});
       clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
-      animation: ${HeroAnimation} 1s ease-out;
+      /* animation: ${HeroAnimation} 1s ease-out; */
     }
   }
 
@@ -100,7 +100,7 @@ export const Title = styled.div`
   font-size: 12rem;
   font-family: 'Lato', sans-serif;
 
-  /* animation: ${TextAnimation} 1s ease-out; */
+  animation: ${TextAnimation} 1s ease-out;
 
   @supports (mix-blend-mode: difference) {
     color: ${props => props.theme.white};
@@ -120,7 +120,7 @@ export const Subtitle = styled.div`
   font-size: 1.8rem;
   font-family: 'Roboto Mono', monospace;
 
-  /* animation: ${TextAnimation} 1s ease-out; */
+  animation: ${TextAnimation} 1s ease-out;
 
   @supports (mix-blend-mode: difference) {
     color: ${props => props.theme.white};

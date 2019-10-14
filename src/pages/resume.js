@@ -68,7 +68,7 @@ const resume = {
       title: 'Workshop "Your first steps with React" | Speaker @ XIV SENE and IV IEEE Week',
       time: '2019',
       content:
-        'Volunteered to host an Intro to React workshop at the University of Brasília, using  original methodology and material.'
+        'Volunteered to teach an Intro to React workshop at the University of Brasília, using  original methodology and material.'
     },
     // {
     //   title: 'Hackathon INOVASBAC | Honorable Mention (2019)',
