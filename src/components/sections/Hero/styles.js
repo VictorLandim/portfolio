@@ -27,13 +27,16 @@ const TextAnimation = keyframes`
 `
 
 export const HeroContainer = styled.section`
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   position: relative;
   background-color: #f6f6f6;
+  /* min-height: 100vh; */
+
+  height: 100vh; 
+  height: calc(var(--vh, 1vh) * 100);
 
   @supports (mix-blend-mode: difference) {
     &::before {

@@ -4,6 +4,10 @@ import { TAB_LAND, TAB_PORT, LARGE_DESKTOP } from './responsive'
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Lato:400,500,700|Roboto+Mono:400,700|Major+Mono+Display&display=swap');
 
+  :root {
+    --vh: 1vh;
+  }
+
   *,
   *:after,
   *:before {
