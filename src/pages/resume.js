@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import SEO from '../components/seo'
 import 'paper-css/paper.min.css'
 import '../components/resume/styles.scss'
 import {
@@ -15,7 +16,7 @@ const resume = {
   name: 'Victor Landim',
   title: 'Full Stack Web Developer',
   about:
-    "Passionate full stack web developer always experimenting with code and music. Believes in technology as a means to enhance and positively impact people's slives. Strives for both simplicity and efficiency, by using modern cutting-edge tools as swell as best practices. Always learning and adapting.",
+    "Full stack web developer passionate about code and music. Believes in technology as a means to enhance and positively impact people's lives. Concerned with efficiency and user experience, utilizes cutting-edge tools to deliver funcional digital experiences. <br/> Always learning and adapting.",
   location: 'Brasília, Brazil',
   phone: '+55 61 9 93750707',
   email: 'hi@victorlandim.com',
@@ -56,7 +57,7 @@ const resume = {
   ],
   education: [
     {
-      title: 'Engineer’s Degree in Computer Engineering',
+      title: 'Bachelor’s Degree in Computer Engineering',
       subtitle: 'University of Brasília',
       time: 'jan 2015 - dec 2020',
       content: ['Researched natural language processing on undergraduate dissertation.']
@@ -68,7 +69,7 @@ const resume = {
       title: 'Workshop "Your first steps with React" | Speaker @ XIV SENE and IV IEEE Week',
       time: '2019',
       content:
-        'Volunteered to teach an Intro to React workshop at the University of Brasília, using  original methodology and material.'
+        'Volunteered to teach an Intro to React workshop at the University of Brasília, using original methodology and material.'
     },
     // {
     //   title: 'Hackathon INOVASBAC | Honorable Mention (2019)',
@@ -80,7 +81,7 @@ const resume = {
       time: '2017',
       content:
         // 'Along with 2 partners, got first place and won $4k prize at the Hackathon hosted by brazilian Insurance company Caixa, by proposing the use of IBM’s Watson chatbot toolkit to support and increase insurance sales.'
-        'Won $4k prize at the Hackathon hosted by brazilian Insurance company Caixa, by proposing the use of IBM’s Watson chatbot toolkit to support and increase insurance sales.'
+        'Won $4k prize at a Hackathon hosted by brazilian Insurance company Caixa, by proposing the use of IBM’s Watson chatbot toolkit to support and increase insurance sales.'
     }
   ],
   experices: [
@@ -91,10 +92,10 @@ const resume = {
       time: 'feb 2017 - present',
       description: '(Prominent Brazilian startup that connects students to private tutors)',
       content: [
-        'First employee at a successful startup in Brasília, from the MVP stage until it raised its first round of investment.',
+        'First employee at a successful startup in Brasília, from the MVP stage until it raised its first funding round.',
         'Translated mockups and designs into reusable and efficient UI components and responsive pages.',
-        'Participated in weekly sprint meetings, and worked closely with both the marketing and design teams.',
-        'Led an effortthe initiative to replace Bootstrap with a custom styling framework developed with Sass and BEM, increasing the efficiency of the workflow with the designers.',
+        // 'Participated in weekly sprint meetings, and worked closely with both the marketing and design teams.',
+        'Led the initiative to replace Bootstrap with a custom styling framework developed with Sass and BEM, increasing the efficiency of the workflow with the designers and marketers.',
         'Crafted from the ground-up, with the MERN stack, the platform’s web backend, api and frontend pages which were used by thousands of monthly visitors.',
         'Successfully optimized both the website’s pageload speed and SEO, ultimately achieving top rankings on organic searches.',
         'Proposed and implemented state-of-the-art web technologies and practices such as React, React Native, unit testing and E2E testing.'
@@ -106,8 +107,8 @@ const resume = {
       time: 'feb 2017 - present',
       content: [
         'Collaborated with a designer partner to create and deliver digital products to multiple clients.',
-        'Applied agile methodologies to optimize the projects development.',
-        'Utilized cutting-edge technologies and industry standards to deliver the most reliable and functional products to the clients.'
+        "Applied agile methodologies to optimize the projects' development.",
+        'Utilized cutting-edge technologies and industry standards to deliver the most reliable and functional products.'
       ]
     }
   ]
@@ -245,7 +246,7 @@ const ResumePage = () => {
     <>
       <h2 className="cv__title">About</h2>
 
-      <p className="cv__content">{resume.about}</p>
+      <p className="cv__content" dangerouslySetInnerHTML={{ __html: resume.about }} />
     </>
   )
 
@@ -269,24 +270,45 @@ const ResumePage = () => {
   )
 
   return (
-    <section className="cv sheet padding-10mm">
-      <div className="cv__top">
-        <div className="cv__left">
-          {header()}
-          {about()}
+    <>
+      <SEO
+        title="Victor Landim | Resume"
+        keywords={[
+          `victor`,
+          `landim`,
+          `web`,
+          `developer`,
+          `programmer`,
+          `portfolio`,
+          `skills`,
+          `react`,
+          `react native`,
+          `javascript`,
+          `programming`,
+          `fullstack`,
+          `frontend`,
+          `backend`
+        ]}
+      />
+      <section className="cv sheet padding-10mm">
+        <div className="cv__top">
+          <div className="cv__left">
+            {header()}
+            {about()}
+          </div>
+          <div className="cv__right">{info()}</div>
         </div>
-        <div className="cv__right">{info()}</div>
-      </div>
 
-      <div className="cv__top">
-        <div className="cv__left">{skills()}</div>
-        <div className="cv__right">{education()}</div>
-      </div>
+        <div className="cv__top">
+          <div className="cv__left">{skills()}</div>
+          <div className="cv__right">{education()}</div>
+        </div>
 
-      {experiences()}
-      {accomplishments()}
-      {languages()}
-    </section>
+        {experiences()}
+        {accomplishments()}
+        {languages()}
+      </section>
+    </>
   )
 }
 

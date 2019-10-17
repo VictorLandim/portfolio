@@ -1,9 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Victor Landim | Full Stack Web Developer`,
-    description: `university of brasília undergraduate and 
-    fullstack developer crafting web experiences at Colmeia.`,
-    author: `@victorlandim  `
+    description: `I'm Victor Landim, a motivated full stack web developer passionate about code and music. I believe in  technology as a means to enhance and positively impact the lives of others around me. In my work, I strive for both  simplicity and efficiency, by using modern cutting-edge tools as well as best practices. Always learning and adapting.`,
+    author: `@victorlandim`
   },
   plugins: [
     `gatsby-plugin-sass`,

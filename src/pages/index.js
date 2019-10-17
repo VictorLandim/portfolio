@@ -54,17 +54,22 @@ const IndexPage = ({ data }) => {
       {/* <Nav /> */}
       <Page>
         <SEO
-          title="Home"
+          title="Victor Landim | Full Stack Web Developer"
           keywords={[
             `victor`,
             `landim`,
             `web`,
             `developer`,
+            `programmer`,
             `portfolio`,
             `skills`,
+            `react`,
+            `react native`,
+            `javascript`,
             `programming`,
             `fullstack`,
-            `frontend`
+            `frontend`,
+            `backend`
           ]}
         />
         <SectionHero />

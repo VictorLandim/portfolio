@@ -9,5 +9,6 @@
   "prettier.semi": false,
   "editor.renderWhitespace": "all",
   "window.zoomLevel": 0,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on"
 }

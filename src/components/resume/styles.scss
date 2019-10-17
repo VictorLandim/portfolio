@@ -5,6 +5,10 @@ $BORDER_SIZE: 1px;
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
 
+.sheet {
+  background-color: $WHITE !important;
+}
+
 *,
 *:after,
 *:before {
@@ -29,11 +33,12 @@ html {
 }
 
 body {
-  background-color: $WHITE;
+  background-color: #fff;
   color: $BLACK;
   font-size: 16px;
   font-weight: 400;
   font-family: 'Roboto Mono', monospace;
+  box-sizing: border-box;
 }
 
 @page {
@@ -47,12 +52,6 @@ a {
 }
 
 .cv {
-  // width: 210mm;
-  // min-height: 297mm;
-  // padding: 15mm;
-  // margin: 10mm auto;
-  // background: #fff;
-
   &__top {
     display: flex;
     align-items: flex-start;
