@@ -16,7 +16,7 @@ const resume = {
   name: 'Victor Landim',
   title: 'Full Stack Web Developer',
   about:
-    "Full stack web developer passionate about code and music. Believes in technology as a means to enhance and positively impact people's lives. Concerned with efficiency and user experience, utilizes cutting-edge tools to deliver funcional digital experiences. <br/> Always learning and adapting.",
+    "Full stack web developer passionate about code and music. Believes in technology as a means to enhance and positively impact people's lives. Concerned with efficiency and user experience, utilizes cutting-edge tools to deliver functional digital experiences. <br/> Always learning and adapting.",
   location: 'Brasília, Brazil',
   phone: '+55 61 9 93750707',
   email: 'hi@victorlandim.com',
