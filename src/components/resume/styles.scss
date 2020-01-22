@@ -139,6 +139,14 @@ a {
     display: inline-block;
   }
 
+  &__external-link {
+    // text-decoration: underline;
+    display: inline-block;
+    padding-bottom: 0.5px;
+    border-bottom: 0.25px solid currentColor;
+    font-weight: 400;
+  }
+
   &__experience-time {
     font-size: 11px;
     display: inline-block;

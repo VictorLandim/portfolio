@@ -18,16 +18,11 @@ export default () => {
           }
         }
       }
-
-      resume: file(name: { eq: "resume" }) {
-        id
-        publicURL
-      }
     }
   `)
 
   const { fluid } = data.file.childImageSharp
-  const { publicURL } = data.resume
+  const resumeUrl = '/resume.pdf'
 
   return (
     <Section>
@@ -39,8 +34,8 @@ export default () => {
           </BioImageContainer>
 
           <BioText>
-            I'm Victor Landim, a motivated full stack web developer passionate about code and music.
-            I believe in technology as a means to enhance and positively impact the lives of others
+            I'm Victor Landim, a software developer passionate about code and music. <br /> I
+            believe in technology as a means to enhance and positively impact the lives of others
             around me. In my work, I strive for both simplicity and efficiency, by using modern
             cutting-edge tools as well as best practices.
             <br />
@@ -49,7 +44,7 @@ export default () => {
             <br />
             <br />
             <br />
-            <ResumeLink href={publicURL} target="_blank">
+            <ResumeLink href={resumeUrl} target="_blank">
               <FiChevronRight size={15} color="#303030" /> resume.pdf
             </ResumeLink>
           </BioText>

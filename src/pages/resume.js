@@ -47,7 +47,7 @@ const resume = {
       ]
     },
     {
-      title: 'Deplpoyment',
+      title: 'Deployment',
       content: ['Gulp', 'Webpack', 'AWS / EB', 'Version control', 'Git', 'Bitbucket']
     },
     {
@@ -66,10 +66,11 @@ const resume = {
   languages: ['Native portuguese', 'fluent english', 'intermediate japanese and spanish'],
   accomplishments: [
     {
-      title: 'Workshop "Your first steps with React" | Speaker @ XIV SENE and IV IEEE Week',
+      title: 'Workshop "Your first steps with React" @ XIV SENE and IV IEEE Week',
+      position: 'Speaker',
+      url: 'https://www.sene.unb.br/index.html#speakers',
       time: '2019',
-      content:
-        'Volunteered to teach an Intro to React workshop at the University of Brasília, using original methodology and material.'
+      content: `Volunteered to teach an Intro to React workshop at the University of Brasília, using original methodology and material. (<a target="_blank" href="https://github.com/VictorLandim/workshop-sene-react" class="cv__external-link">github</a>)`
     },
     // {
     //   title: 'Hackathon INOVASBAC | Honorable Mention (2019)',
@@ -77,8 +78,10 @@ const resume = {
     //     'Collaborated with a multidisciplinary team to create a more efficient and scalable business model and tech stack to the FENASBAC Group.'
     // },
     {
-      title: 'Hackathon Caixa | Winner',
+      title: 'Hackathon Caixa',
+      position: 'Winner',
       time: '2017',
+      url: 'https://campuse.ro/challenges/vem-ai-o-primeiro-hackathon-da-caixa-seguradora/',
       content:
         // 'Along with 2 partners, got first place and won $4k prize at the Hackathon hosted by brazilian Insurance company Caixa, by proposing the use of IBM’s Watson chatbot toolkit to support and increase insurance sales.'
         'Won $4k prize at a Hackathon hosted by brazilian Insurance company Caixa, by proposing the use of IBM’s Watson chatbot toolkit to support and increase insurance sales.'
@@ -92,23 +95,35 @@ const resume = {
       time: 'feb 2017 - present',
       description: '(Prominent Brazilian startup that connects students to private tutors)',
       content: [
-        'First employee at a successful startup in Brasília, from the MVP stage until it raised its first funding round.',
-        'Translated mockups and designs into reusable and efficient UI components and responsive pages.',
+        'First hire at a successful startup in Brasília that went through multiple funding rounds and raised $300k+.',
+        'Translated mockups and designs into efficient UI components and responsive pages.',
         // 'Participated in weekly sprint meetings, and worked closely with both the marketing and design teams.',
-        'Led the initiative to replace Bootstrap with a custom styling framework developed with Sass and BEM, increasing the efficiency of the workflow with the designers and marketers.',
-        'Crafted from the ground-up, with the MERN stack, the platform’s web backend, api and frontend pages which were used by thousands of monthly visitors.',
+        'Led the initiative to replace Bootstrap with a custom styling framework developed with Sass and BEM, that increased the efficiency of the workflow with the designers and marketers.',
+        // 'Crafted from the ground-up, with the MERN stack, the platform’s web backend, api and frontend pages which were used by thousands of monthly visitors.',
+        'Crafted from the ground-up, with the MERN stack, the platform’s backend/api and the frontend, used by thousands of monthly visitors.',
         'Successfully optimized both the website’s pageload speed and SEO, ultimately achieving top rankings on organic searches.',
-        'Proposed and implemented state-of-the-art web technologies and practices such as React, React Native, unit testing and E2E testing.'
+        'Proposed and implemented state-of-the-art web technologies and practices such as React, React Native, unit & e2e testing.'
       ]
     },
     {
       // position: 'Freelance Web Developer',
       company: 'Self Employed Web Developer',
+      description: `(Clients include <a target="_blank" href="http://mediaplusbrasil.com.br" class="cv__external-link">Media Plus</a> and <a target="_blank" href="http://clinicafaber.com.br" class="cv__external-link">Clinica Faber</a>)`,
+      clients: [
+        {
+          name: 'MediaPlus',
+          url: 'mediaplusbrasil.com'
+        },
+        {
+          name: 'Clinica Faber',
+          url: 'clinicafaber.com.br'
+        }
+      ],
       time: 'feb 2017 - present',
       content: [
         'Collaborated with a designer partner to create and deliver digital products to multiple clients.',
         "Applied agile methodologies to optimize the projects' development.",
-        'Utilized cutting-edge technologies and industry standards to deliver the most reliable and functional products.'
+        'Utilized cutting-edge technologies and industry standards to deliver reliable and functional products.'
       ]
     }
   ]
@@ -150,7 +165,11 @@ const ResumePage = () => {
           <h5 className="cv__content-title">
             {e.position && `${e.position} | `}
             {e.companyLink ? (
-              <a className="cv__company-link" href={e.companyLink}>
+              <a
+                className="cv__company-link cv__external-link"
+                href={e.companyLink}
+                target="_blank"
+              >
                 {e.company}
               </a>
             ) : (
@@ -158,7 +177,10 @@ const ResumePage = () => {
             )}{' '}
             {<p className="cv__experience-time">({e.time})</p>}
           </h5>
-          <h5 className="cv__content-subtitle">{e.description}</h5>
+          <h5
+            className="cv__content-subtitle"
+            dangerouslySetInnerHTML={{ __html: e.description }}
+          ></h5>
 
           {e.content.map(f => (
             <p className="cv__content">
@@ -235,7 +257,7 @@ const ResumePage = () => {
         <li className="cv__info-item">
           <a href={resume.linkedin}>
             <FiLinkedin size={12} color={'#303030'} />
-            Linkedin
+            LinkedIn
           </a>
         </li>
       </ul>
@@ -257,12 +279,20 @@ const ResumePage = () => {
       {resume.accomplishments.map(e => (
         <div className="cv__experience">
           <h5 className="cv__content-title">
-            {e.title} {<p className="cv__experience-time">({e.time})</p>}
+            {e.position && `${e.position} | `}
+            {e.url ? (
+              <a className="cv__company-link cv__external-link" href={e.url} target="_blank">
+                {e.title}
+              </a>
+            ) : (
+              e.title
+            )}{' '}
+            {<p className="cv__experience-time">({e.time})</p>}
           </h5>
 
           <p className="cv__content">
             <FiChevronRight size={12} color="#303030" />
-            {e.content}
+            <span dangerouslySetInnerHTML={{ __html: e.content }}></span>
           </p>
         </div>
       ))}
