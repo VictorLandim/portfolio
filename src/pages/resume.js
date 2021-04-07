@@ -22,7 +22,7 @@ const resume = {
   email: 'hi@victorlandim.com',
   website: 'victorlandim.com',
   github: 'https://github.com/VictorLandim',
-  linkedin: 'https://www.linkedin.com/in/victor-landim/',
+  linkedin: 'https://www.linkedin.com/in/victor-landim/?locale=en_US',
   skills: [
     {
       title: 'Front end',
