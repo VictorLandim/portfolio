@@ -113,7 +113,7 @@ const resume = {
         // 'Achieved $560,000 in trailing 12 months revenue; YoY growth of 217% in Feb 2021.',
         "Leveraged cutting-edge tools (React, Storybook, Typescript, Tailwind) to publish a private design system to unify the company's voice.",
         `Helped partners such as <a target="_blank" href="https://give.mastercard.com/" class="cv__external-link">Mastercard</a>, <a target="_blank" href="https://www.allforsmall.biz/donate" class="cv__external-link">Citi Bank</a>, <a target="_blank" href="https://mayorsfundla.org/covid19/" class="cv__external-link">City of Los Angeles</a> raise thousands of dollars and impact thousands of monthly donors implementing custom donation campaign pages created with React, Next.js, Graphql.`,
-        'Took part in critical product decisions during sprint mettings and calls with partners.',
+        'Took part in critical product decisions during sprint meetings and calls with partners.',
       ],
     },
     {
