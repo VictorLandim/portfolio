@@ -7,11 +7,11 @@ import { TAB_PORT, PHONE } from '../../../styles/responsive'
 import phone from '../../../data/images/phone.jpg'
 
 const Container = styled.div`
-  box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
   position: relative;
-  background: #fff url(${p => p.image || phone});
-  background-size: ${p => (p.isApp ? '150%' : 'cover')};
-  background-position: ${p => (p.isApp ? 'center 5px' : 'center')};
+  background: #fff url(${(p) => p.image || phone});
+  background-size: ${(p) => (p.isApp ? '150%' : 'cover')};
+  background-position: ${(p) => (p.isApp ? 'center 5px' : 'center')};
   background-repeat: no-repeat;
   min-height: 28rem;
   overflow: hidden;
@@ -45,7 +45,7 @@ const Container = styled.div`
   }
 
   &:hover {
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
   }
 
   @media ${TAB_PORT} {
@@ -63,27 +63,27 @@ const Container = styled.div`
       top: -24.5rem;
       height: 25rem;
       background: red;
-      background: ${p => p.theme.white} url(${p => p.image || phone});
-      background-size: ${p => (p.isApp ? '150%' : 'contain')};
-      background-position: ${p => (p.isApp ? 'center 5px' : 'center')};
+      background: ${(p) => p.theme.white} url(${(p) => p.image || phone});
+      background-size: ${(p) => (p.isApp ? '150%' : 'contain')};
+      background-position: ${(p) => (p.isApp ? 'center 5px' : 'center')};
       background-repeat: no-repeat;
       border-top-left-radius: 1rem;
       border-top-right-radius: 1rem;
-      box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
     }
 
     &:hover {
-      box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.2);
     }
 
     &:hover:before {
-      background-color: ${p => p.theme.white};
+      background-color: ${(p) => p.theme.white};
     }
   }
 `
 
 const Title = styled.h2`
-  color: ${p => p.theme.white};
+  color: ${(p) => p.theme.white};
   font-weight: 700;
   font-size: 2.8rem;
   font-family: monospace;
@@ -99,7 +99,7 @@ const Title = styled.h2`
   font-family: 'Roboto Mono', monospace;
 
   ${Container}:hover & {
-    color: ${p => p.theme.primary};
+    color: ${(p) => p.theme.primary};
     /* left: calc(20% + 2rem); */
     transform: translateX(20%);
   }
@@ -107,7 +107,7 @@ const Title = styled.h2`
   @media ${TAB_PORT} {
     /* left: calc(20% + 2rem); */
     transform: translateX(20%);
-    color: ${p => p.theme.primary};
+    color: ${(p) => p.theme.primary};
   }
 
   @media ${PHONE} {
@@ -149,7 +149,7 @@ const Info = styled.aside`
     border-left: none;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    background-color: ${p => p.theme.white};
+    background-color: ${(p) => p.theme.white};
   }
 `
 
@@ -168,11 +168,11 @@ const TechContainer = styled.div`
 
 const Tech = styled.div`
   font-size: 1rem;
-  color: ${p => p.theme.white};
-  background-color: ${p => p.theme.primary};
+  color: ${(p) => p.theme.white};
+  background-color: ${(p) => p.theme.primary};
   margin: 0.3rem;
   margin-left: 0;
-  border: 1px solid ${p => p.theme.white};
+  border: 1px solid ${(p) => p.theme.white};
   padding: 0.6rem 1rem;
   border-radius: 1.2rem;
 `
@@ -184,24 +184,24 @@ const ButtonContainer = styled.div`
 `
 
 const ProjectButton = styled.a`
-  background-color: ${p => {
+  background-color: ${(p) => {
     if (p.disabled) return p.theme.gray
     if (p.inverted) return p.theme.white
     return p.theme.primary
   }};
 
-  opacity: ${p => p.disabled && '0.8'};
+  opacity: ${(p) => p.disabled && '0.8'};
 
-  cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${(p) => (p.disabled ? 'not-allowed' : 'pointer')};
 
 
-  color: ${p => {
+  color: ${(p) => {
     if (p.inverted) return p.theme.primary
     return p.theme.white
   }};
 
   border-radius: 0.8rem;
-  /* border: ${p => p.inverted && `1px solid ${p.theme.black}`}; */
+  /* border: ${(p) => p.inverted && `1px solid ${p.theme.black}`}; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -218,7 +218,7 @@ const ProjectButton = styled.a`
   }
 
   &:hover {
-    ${p => !p.disabled && 'transform: translateY(-2px);'}
+    ${(p) => !p.disabled && 'transform: translateY(-2px);'}
   }
 `
 
@@ -227,7 +227,7 @@ export default ({ title, description, tech = [], image, website, source, isApp }
     <Title>{title}</Title>
     <Info>
       <Description>{description}</Description>
-      <TechContainer>{tech && tech.map(t => <Tech key={t}>{t}</Tech>)}</TechContainer>
+      <TechContainer>{tech && tech.map((t) => <Tech key={t}>{t}</Tech>)}</TechContainer>
       <ButtonContainer>
         <ProjectButton href={source} target="_blank" disabled={!source}>
           Source <FaGithub size={17} color={'#fff'} />

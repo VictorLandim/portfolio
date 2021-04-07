@@ -60,7 +60,7 @@ a {
 
   &__left {
     flex: 1;
-    margin-right: 35px;
+    margin-right: 32px;
   }
 
   &__right {
@@ -70,22 +70,22 @@ a {
   &__header {
     background-color: $BLACK;
     color: $WHITE;
-    padding: 20px 25px;
+    padding: 15px 20px;
     margin-bottom: 20px;
   }
 
   &__header-title {
-    font-size: 28px;
+    font-size: 25px;
     margin-bottom: 10px;
   }
 
   &__header-subtitle {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
   }
 
   &__info {
-    padding: 10px 15px 15px 15px;
+    padding: 10px 15px;
     border: $BORDER_SIZE solid $BLACK;
     // flex: 1;
     align-items: center;
@@ -125,6 +125,7 @@ a {
     justify-content: center;
     font-size: 16px;
     margin: 17px 0;
+    margin-bottom: 15px;
 
     &::after {
       content: '';
@@ -157,13 +158,23 @@ a {
     font-weight: 300;
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
 
     svg {
       margin-right: 5px;
+      flex-shrink: 0;
+      padding-top: 3px;
     }
 
     &:not(:last-of-type) {
       margin-bottom: 5px;
+    }
+
+    &--education {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
     }
   }
 
@@ -185,11 +196,15 @@ a {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-direction: column;
   }
 
   &__skill {
     margin-bottom: 5px;
     flex: 1;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
   }
 
   &__skill-title {
@@ -197,6 +212,9 @@ a {
     font-size: 13px;
     letter-spacing: -0.5px;
     margin-bottom: 3px;
+    margin-right: 5px;
+    flex-shrink: 0;
+    flex: 0 0 110px;
   }
 
   &__skill-content {
@@ -210,5 +228,23 @@ a {
     &:not(:last-of-type) {
       margin-bottom: 15px;
     }
+  }
+}
+
+.link-message {
+  position: absolute;
+  bottom: 0;
+  // right: 8px;
+  right: 5px;
+  bottom: 2px;
+  // transform: rotate(-90deg) translateX(100%);
+  transform-origin: right;
+  font-size: 9px;
+
+  a {
+    display: inline-block;
+    padding-bottom: 0.5px;
+    border-bottom: 0.25px solid currentColor;
+    font-weight: 400;
   }
 }

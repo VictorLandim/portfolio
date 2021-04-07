@@ -5,7 +5,7 @@ import { PHONE } from '../styles/responsive'
 const ExternalLink = styled(OutboundLink)`
   font-family: 'Roboto Mobo', monospace;
   font-size: 1.75rem;
-  color: ${p => p.theme.primary};
+  color: ${(p) => p.theme.primary};
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +22,7 @@ const ExternalLink = styled(OutboundLink)`
     height: 3px;
     transform: scaleX(0);
     transform-origin: left;
-    background-color: ${p => p.theme.primary};
+    background-color: ${(p) => p.theme.primary};
     transition: 0.3s all;
   }
 
@@ -40,7 +40,6 @@ const SocialLink = styled(ExternalLink)`
 
   @media ${PHONE} {
     margin-bottom: 1rem;
-    flex: 0 0 100%;
   }
 `
 

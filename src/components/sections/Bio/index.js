@@ -1,12 +1,10 @@
-import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
-
+import React from 'react'
+import { FiChevronRight } from 'react-icons/fi'
+import { Container, Flex } from '../../../components/Layout'
 import Section from '../../../components/Section'
 import SectionHeading from '../../../components/SectionHeading'
-import { Container, Flex } from '../../../components/Layout'
-
-import { BioImageContainer, BioImage, BioText, ResumeLink } from './styles'
+import { BioImage, BioImageContainer, BioText, ResumeLink } from './styles'
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -22,7 +20,8 @@ export default () => {
   `)
 
   const { fluid } = data.file.childImageSharp
-  const resumeUrl = '/resume.pdf'
+  const resumePdfUrl = '/resume.pdf'
+  const resumeUrl = '/resume'
 
   return (
     <Section>
@@ -44,7 +43,10 @@ export default () => {
             <br />
             <br />
             <br />
-            <ResumeLink href={resumeUrl} target="_blank">
+            <ResumeLink href={resumeUrl} target="_blank" style={{ marginRight: '42px' }}>
+              <FiChevronRight size={15} color="#303030" /> resume page
+            </ResumeLink>
+            <ResumeLink href={resumePdfUrl} target="_blank">
               <FiChevronRight size={15} color="#303030" /> resume.pdf
             </ResumeLink>
           </BioText>

@@ -16,7 +16,7 @@ import {
   DiReact,
   DiSass,
   DiTerminal,
-  DiVisualstudio
+  DiVisualstudio,
 } from 'react-icons/di'
 
 export default () => (

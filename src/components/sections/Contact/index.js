@@ -10,7 +10,7 @@ export default () => (
   <Section>
     <Container padded>
       <SectionHeading>Find me</SectionHeading>
-      <Flex>
+      <Flex mobileColumn>
         <SocialLink href="mailto:hi@victorlandim.com" target="_blank">
           Email <FaEnvelope size={18} color={'#202020'} />
         </SocialLink>

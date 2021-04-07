@@ -40,14 +40,14 @@ export const query = graphql`
 `
 
 const IndexPage = ({ data }) => {
-  const allProjects = data.allContentfulProject.edges.map(e => ({
+  const allProjects = data.allContentfulProject.edges.map((e) => ({
     ...e.node,
     description: e.node.description.description,
-    image: e.node.image && e.node.image.file.url
+    image: e.node.image && e.node.image.file.url,
   }))
 
-  const work = allProjects.filter(p => p.isWork).sort((a, b) => a.order - b.order)
-  const projects = allProjects.filter(p => !p.isWork).sort((a, b) => a.order - b.order)
+  const work = allProjects.filter((p) => p.isWork).sort((a, b) => a.order - b.order)
+  const projects = allProjects.filter((p) => !p.isWork).sort((a, b) => a.order - b.order)
 
   return (
     <>
@@ -66,38 +66,42 @@ const IndexPage = ({ data }) => {
             `react`,
             `react native`,
             `javascript`,
+            `typescript`,
             `programming`,
             `fullstack`,
             `frontend`,
-            `backend`
+            `backend`,
           ]}
         />
         <SectionHero />
         <SectionBio />
 
-        <SectionProjects data={work} heading="Work" />
+        {/* <SectionProjects data={work} heading="Work" /> */}
         <SectionProjects data={projects} heading="Projects" showGithub />
 
-        <SectionTools />
+        {/* <SectionTools /> */}
 
         <SectionInterests
           heading="Skills"
           data={[
             'C/C++',
             'CSS3/Sass',
+            'Styled Components',
             'React',
+            'Redux',
             'React Native',
             'HTML5',
-            'Javascript/ES6',
+            'Typescript/Javascript/ES6',
             'Node.js/Express.js',
             'MongoDB',
-            'Parse Server',
             'Google Firebase',
             'Java',
             'LibGDX',
             'PostgreSQL',
-            'Python'
-          ]}
+            'Python',
+            'Kubernetes',
+            'Docker',
+          ].sort((a, b) => a - b)}
         />
 
         <SectionInterests
@@ -110,8 +114,8 @@ const IndexPage = ({ data }) => {
             'Photography',
             'Design',
             'Calligraphy',
-            'Linguistics'
-          ]}
+            'Linguistics',
+          ].sort((a, b) => a - b)}
         />
 
         <SectionContact />

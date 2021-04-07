@@ -1,23 +1,23 @@
-import React, { useEffect } from 'react'
-import SEO from '../components/seo'
 import 'paper-css/paper.min.css'
-import '../components/resume/styles.scss'
+import React, { useEffect } from 'react'
 import {
-  FiLink2,
   FiAtSign,
+  FiChevronRight,
+  FiGithub,
+  FiLink2,
+  FiLinkedin,
   FiMapPin,
   FiPhone,
-  FiGithub,
-  FiLinkedin,
-  FiChevronRight
 } from 'react-icons/fi'
+import '../components/resume/styles.scss'
+import SEO from '../components/seo'
 
 const resume = {
   name: 'Victor Landim',
   title: 'Full Stack Web Developer',
   about:
     "Full stack web developer passionate about code and music. Believes in technology as a means to enhance and positively impact people's lives. Concerned with efficiency and user experience, utilizes cutting-edge tools to deliver functional digital experiences. <br/> Always learning and adapting.",
-  location: 'Brasília, Brazil',
+  location: 'Brazil (-3 GMT)',
   phone: '+55 61 9 93750707',
   email: 'hi@victorlandim.com',
   website: 'victorlandim.com',
@@ -28,49 +28,63 @@ const resume = {
       title: 'Front end',
       content: [
         'HTML5',
-        'CSS3 / Sass / BEM',
-        'Javascript / ES6',
-        'jQuery',
-        'React / Redux / Saga',
-        'React Native'
-      ]
+        'CSS3',
+        'Sass',
+        'SEO',
+        'Typescript',
+        'Javascript',
+        'ES6',
+        'React',
+        'Redux',
+        'Next.js',
+        'Gatsby',
+        'Storybook',
+        'Jest',
+        'Cypress',
+      ],
     },
     {
       title: 'Back end',
-      content: [
-        'Node.js / Express.js',
-        'RESTful APIs',
-        'MongoDB',
-        'PostgreSQL',
-        'Parse Server',
-        'Firebase'
-      ]
+      content: ['Node.js', 'Express.js', 'Nest.js', 'REST', 'Graphql', 'MongoDB', 'PostgreSQL'],
     },
     {
       title: 'Deployment',
-      content: ['Gulp', 'Webpack', 'AWS / EB', 'Version control', 'Git', 'Bitbucket']
+      content: ['Docker', 'Babel', 'AWS', 'EB', 'EC2', 'Git'],
+    },
+    {
+      title: 'Familiar with',
+      content: ['Go', 'Elixir', 'Python', 'Kubernetes', 'Microservices'],
     },
     {
       title: 'Soft skills',
-      content: ['Proactivity', 'Self-teaching', 'Empathy', 'Time management', 'Adaptability']
-    }
+      content: ['Proactivity', 'Self-teaching', 'Empathy', 'Time management', 'Adaptability'],
+    },
   ],
   education: [
     {
-      title: 'Bachelor’s Degree in Computer Engineering',
-      subtitle: 'University of Brasília',
-      time: 'jan 2015 - dec 2020',
-      content: ['Researched natural language processing on undergraduate dissertation.']
-    }
+      title: 'Computer Engineering Degree',
+      content: [
+        {
+          subtitle: 'University of Brasília, Brazil',
+          time: 'dec 2021',
+          text: ['Researched natural language processing on undergraduate dissertation.'],
+        },
+        {
+          subtitle: 'University of Algarve, Portugal',
+          time: 'jan 2020',
+          text: ['Top student selected to participate in exchange program for a semester.'],
+        },
+      ],
+    },
   ],
   languages: ['Native portuguese', 'fluent english', 'intermediate japanese and spanish'],
   accomplishments: [
     {
-      title: 'Workshop "Your first steps with React" @ XIV SENE and IV IEEE Week',
+      title: 'Workshop "Your first steps with React" @ IV IEEE Week',
       position: 'Speaker',
       url: 'https://www.sene.unb.br/index.html#speakers',
       time: '2019',
-      content: `Volunteered to teach an Intro to React workshop at the University of Brasília, using original methodology and material. (<a target="_blank" href="https://github.com/VictorLandim/workshop-sene-react" class="cv__external-link">github</a>)`
+      content: `Volunteered to teach an Intro to React workshop at University of Brasília. Used original methodology and material. (<a target="_blank" href="https://github.com/VictorLandim/workshop-sene-react" class="cv__external-link">github</a>)`,
     },
     // {
     //   title: 'Hackathon INOVASBAC | Honorable Mention (2019)',
@@ -78,89 +92,105 @@ const resume = {
     //     'Collaborated with a multidisciplinary team to create a more efficient and scalable business model and tech stack to the FENASBAC Group.'
     // },
     {
-      title: 'Hackathon Caixa',
+      title: 'Hackathon Caixa Insurances',
       position: 'Winner',
       time: '2017',
       url: 'https://campuse.ro/challenges/vem-ai-o-primeiro-hackathon-da-caixa-seguradora/',
       content:
         // 'Along with 2 partners, got first place and won $4k prize at the Hackathon hosted by brazilian Insurance company Caixa, by proposing the use of IBM’s Watson chatbot toolkit to support and increase insurance sales.'
-        'Won $4k prize at a Hackathon hosted by brazilian Insurance company Caixa, by proposing the use of IBM’s Watson chatbot toolkit to support and increase insurance sales.'
-    }
+        'Won 1st place $4k prize. Proposed the use of IBM’s Watson chatbot toolkit to support and increase insurance sales.',
+    },
   ],
-  experices: [
+  experiences: [
+    {
+      position: 'Frontend Engineer',
+      company: 'Goodworld',
+      companyLink: 'https://goodworldnow.com',
+      time: 'mar 2020 - present',
+      description:
+        '(American D.C.-based fintech startup. A Techstars and 500 Startups Portfolio Company. Current raise led by Mastercard)',
+      content: [
+        // 'Achieved $560,000 in trailing 12 months revenue; YoY growth of 217% in Feb 2021.',
+        "Leveraged cutting-edge tools (React, Storybook, Typescript, Tailwind) to publish a private design system to unify the company's voice.",
+        `Helped partners such as <a target="_blank" href="https://give.mastercard.com/" class="cv__external-link">Mastercard</a>, <a target="_blank" href="https://www.allforsmall.biz/donate" class="cv__external-link">Citi Bank</a>, <a target="_blank" href="https://mayorsfundla.org/covid19/" class="cv__external-link">City of Los Angeles</a> raise thousands of dollars and impact thousands of monthly donors implementing custom donation campaign pages created with React, Next.js, Graphql.`,
+        'Took part in critical product decisions during sprint mettings and calls with partners.',
+      ],
+    },
     {
       position: 'Full Stack Web Developer',
-      company: 'Colmeia Tech LTDA',
+      company: 'Colmeia Tech',
       companyLink: 'https://aulascolmeia.com.br',
-      time: 'feb 2017 - present',
+      time: 'feb 2017 - dec 2019',
       description: '(Prominent Brazilian startup that connects students to private tutors)',
       content: [
-        'First hire at a successful startup in Brasília that went through multiple funding rounds and raised $300k+.',
-        'Translated mockups and designs into efficient UI components and responsive pages.',
+        // 'First hire at a successful startup in Brasília that went through multiple funding rounds and raised $300k+.',
+        'Translated mockups and designs into efficient UI components and responsive pages using React, Node, Sass.',
         // 'Participated in weekly sprint meetings, and worked closely with both the marketing and design teams.',
-        'Led the initiative to replace Bootstrap with a custom styling framework developed with Sass and BEM, that increased the efficiency of the workflow with the designers and marketers.',
+        // 'Led the initiative to replace Bootstrap with a custom styling framework developed with Sass and BEM, that increased the efficiency of the workflow with the designers and marketers.',
         // 'Crafted from the ground-up, with the MERN stack, the platform’s web backend, api and frontend pages which were used by thousands of monthly visitors.',
         'Crafted from the ground-up, with the MERN stack, the platform’s backend/api and the frontend, used by thousands of monthly visitors.',
         'Successfully optimized both the website’s pageload speed and SEO, ultimately achieving top rankings on organic searches.',
-        'Proposed and implemented state-of-the-art web technologies and practices such as React, React Native, unit & e2e testing.'
-      ]
+        // 'Proposed and implemented state-of-the-art web technologies and practices such as React, React Native, unit & e2e testing.',
+      ],
     },
     {
       // position: 'Freelance Web Developer',
       company: 'Self Employed Web Developer',
-      description: `(Clients include <a target="_blank" href="http://mediaplusbrasil.com.br" class="cv__external-link">Media Plus</a> and <a target="_blank" href="http://clinicafaber.com.br" class="cv__external-link">Clinica Faber</a>)`,
+      description: `(Clients include <a target="_blank" href="http://mediaplusbrasil.com.br" class="cv__external-link">Media Plus</a> and <a target="_blank" href="https://clinicafaber.com.br/" class="cv__external-link">Clinica Faber</a>)`,
       clients: [
         {
           name: 'MediaPlus',
-          url: 'mediaplusbrasil.com'
+          url: 'mediaplusbrasil.com',
         },
         {
           name: 'Clinica Faber',
-          url: 'clinicafaber.com.br'
-        }
+          url: 'clinicafaber.com.br',
+        },
       ],
-      time: 'feb 2017 - present',
+      time: 'feb 2017 - dec 2019',
       content: [
         'Collaborated with a designer partner to create and deliver digital products to multiple clients.',
-        "Applied agile methodologies to optimize the projects' development.",
-        'Utilized cutting-edge technologies and industry standards to deliver reliable and functional products.'
-      ]
-    }
-  ]
+        "Applied agile methodologies and modern technologies to optimize the projects' development.",
+        // 'Utilized cutting-edge technologies and industry standards to deliver reliable and functional products.'
+      ],
+    },
+  ],
 }
 
 const ResumePage = () => {
-  useEffect(() => document.querySelector('body').classList.add('A4'), [])
+  useEffect(() => {
+    document.querySelector('body').classList.add('A4')
+  }, [])
 
-  const header = () => (
+  const Header = () => (
     <header className="cv__header">
       <h1 className="cv__header-title">{resume.name}</h1>
       <h3 className="cv__header-subtitle">{resume.title}</h3>
     </header>
   )
 
-  const skills = () => (
+  const Skills = () => (
     <>
       <h2 className="cv__title">Skills</h2>
       <div className="cv__skill-container">
-        {resume.skills.map(e => (
+        {resume.skills.map((e) => (
           <div className="cv__skill">
             <h6 className="cv__skill-title">{e.title}:</h6>
+            <div className="cv__skill-content">{e.content.join(', ')}.</div>
 
-            {/* <div className="cv__skill-content">{e.content.join(', ')}</div> */}
-            {e.content.map(f => (
+            {/* {e.content.map((f) => (
               <div className="cv__skill-content">{f}</div>
-            ))}
+            ))} */}
           </div>
         ))}
       </div>
     </>
   )
 
-  const experiences = () => (
+  const Experiences = () => (
     <>
       <h2 className="cv__title">Experiences</h2>
-      {resume.experices.map(e => (
+      {resume.experiences.map((e) => (
         <div className="cv__experience">
           <h5 className="cv__content-title">
             {e.position && `${e.position} | `}
@@ -169,6 +199,7 @@ const ResumePage = () => {
                 className="cv__company-link cv__external-link"
                 href={e.companyLink}
                 target="_blank"
+                rel="noreferrer"
               >
                 {e.company}
               </a>
@@ -182,10 +213,10 @@ const ResumePage = () => {
             dangerouslySetInnerHTML={{ __html: e.description }}
           ></h5>
 
-          {e.content.map(f => (
+          {e.content.map((f) => (
             <p className="cv__content">
               <FiChevronRight size={12} color="#303030" />
-              {f}
+              <span dangerouslySetInnerHTML={{ __html: f }} />
             </p>
           ))}
         </div>
@@ -193,25 +224,29 @@ const ResumePage = () => {
     </>
   )
 
-  const education = () => (
+  const Education = () => (
     <>
       <h2 className="cv__title">Education</h2>
-      {resume.education.map(e => (
+      {resume.education.map((e) => (
         <div className="cv__experience">
-          <h5 className="cv__content-title">{e.title}</h5>
-          <h5 className="cv__content-subtitle">
-            {e.subtitle} <br /> ({e.time})
+          <h5 className="cv__content-title" style={{ marginBottom: '10px' }}>
+            {e.title}
           </h5>
+          {e.content.map((f) => (
+            <>
+              <h5 className="cv__content-subtitle">
+                {f.subtitle} ({f.time})
+              </h5>
 
-          {e.content.map(f => (
-            <p className="cv__content">{f}</p>
+              <p className="cv__content cv__content--education">{f.text}</p>
+            </>
           ))}
         </div>
       ))}
     </>
   )
 
-  const languages = () => (
+  const Languages = () => (
     <>
       <h2 className="cv__title">Languages</h2>
 
@@ -222,9 +257,9 @@ const ResumePage = () => {
     </>
   )
 
-  const info = () => (
+  const Info = () => (
     <div className="cv__info">
-      <h2 className="cv__info-title">+ info</h2>
+      {/* <h2 className="cv__info-title">+ info</h2> */}
       <ul className="cv__info-list">
         <li className="cv__info-item">
           <FiMapPin size={12} color={'#303030'} />
@@ -235,27 +270,27 @@ const ResumePage = () => {
           {resume.phone}
         </li>
         <li className="cv__info-item">
-          <a href={`mailto:${resume.email}`}>
+          <a target="_blank" rel="noreferrer" href={`mailto:${resume.email}`}>
             <FiAtSign size={12} color={'#303030'} />
             {resume.email}
           </a>
         </li>
 
         <li className="cv__info-item">
-          <a href={`https://${resume.website}`}>
+          <a target="_blank" rel="noreferrer" href={`https://${resume.website}`}>
             <FiLink2 size={12} color={'#303030'} />
             {resume.website}
           </a>
         </li>
 
         <li className="cv__info-item">
-          <a href={resume.github}>
+          <a target="_blank" rel="noreferrer" href={resume.github}>
             <FiGithub size={12} color={'#303030'} />
             Github
           </a>
         </li>
         <li className="cv__info-item">
-          <a href={resume.linkedin}>
+          <a target="_blank" rel="noreferrer" href={resume.linkedin}>
             <FiLinkedin size={12} color={'#303030'} />
             LinkedIn
           </a>
@@ -264,7 +299,7 @@ const ResumePage = () => {
     </div>
   )
 
-  const about = () => (
+  const About = () => (
     <>
       <h2 className="cv__title">About</h2>
 
@@ -272,16 +307,21 @@ const ResumePage = () => {
     </>
   )
 
-  const accomplishments = () => (
+  const Accomplishments = () => (
     <>
       <h2 className="cv__title">Accomplishments</h2>
 
-      {resume.accomplishments.map(e => (
+      {resume.accomplishments.map((e) => (
         <div className="cv__experience">
           <h5 className="cv__content-title">
             {e.position && `${e.position} | `}
             {e.url ? (
-              <a className="cv__company-link cv__external-link" href={e.url} target="_blank">
+              <a
+                className="cv__company-link cv__external-link"
+                href={e.url}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {e.title}
               </a>
             ) : (
@@ -297,6 +337,15 @@ const ResumePage = () => {
         </div>
       ))}
     </>
+  )
+
+  const LinkMessage = () => (
+    <div className="link-message">
+      Coded with React -{' '}
+      <a target="_blank" rel="noreferrer" href="https://victorlandim.com/resume">
+        victorlandim.com/resume
+      </a>
+    </div>
   )
 
   return (
@@ -317,26 +366,32 @@ const ResumePage = () => {
           `programming`,
           `fullstack`,
           `frontend`,
-          `backend`
+          `backend`,
         ]}
       />
-      <section className="cv sheet padding-10mm">
+      <section className="cv sheet padding-10mm" style={{ padding: '8mm' }}>
         <div className="cv__top">
           <div className="cv__left">
-            {header()}
-            {about()}
+            <Header />
+            <About />
+            <Skills />
           </div>
-          <div className="cv__right">{info()}</div>
+
+          <div className="cv__right">
+            <Info />
+            <Education />
+          </div>
         </div>
 
-        <div className="cv__top">
+        {/* <div className="cv__top">
           <div className="cv__left">{skills()}</div>
           <div className="cv__right">{education()}</div>
-        </div>
+        </div> */}
+        <Experiences />
+        <Accomplishments />
+        <Languages />
 
-        {experiences()}
-        {accomplishments()}
-        {languages()}
+        <LinkMessage />
       </section>
     </>
   )
