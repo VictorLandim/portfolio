@@ -18,9 +18,9 @@ export default () => {
       <HeroText>
         <Title>i'm ∇ictor.</Title>
         <Subtitle>
-          passionate full-stack developer currently <br /> crafting web experiences at{' '}
-          <a target="_blank" rel="noreferrer" href="https://goodworldnow.com/">
-            Goodworld
+          passionate front-end engineer currently <br /> crafting web experiences at{' '}
+          <a target="_blank" rel="noreferrer" href="https://x-team.com/">
+            X-Team
           </a>
           .
         </Subtitle>
