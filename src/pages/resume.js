@@ -14,10 +14,10 @@ import SEO from '../components/seo'
 
 const resume = {
   name: 'Victor Landim',
-  title: 'Full Stack Web Developer',
+  title: 'Front-end Engineer',
   about:
-    "Full stack web developer passionate about code and music. Believes in technology as a means to enhance and positively impact people's lives. Concerned with efficiency and user experience, utilizes cutting-edge tools to deliver functional digital experiences. <br/> Always learning and adapting.",
-  location: 'Brazil (-3 GMT)',
+    "I'm a front-end engineer passionate about code and music. I believe in technology as a means to enhance and positively impact people's lives. Concerned with efficiency and user experience, I utilize cutting-edge tools to deliver functional digital experiences. <br/> I'm constantly learning and adapting.",
+  location: 'Brazil (UTC -3)',
   phone: '+55 61 9 93750707',
   email: 'hi@victorlandim.com',
   website: 'victorlandim.com',
@@ -25,7 +25,7 @@ const resume = {
   linkedin: 'https://www.linkedin.com/in/victor-landim/?locale=en_US',
   skills: [
     {
-      title: 'Front end',
+      title: 'Front-end',
       content: [
         'HTML5',
         'CSS3',
@@ -44,7 +44,7 @@ const resume = {
       ],
     },
     {
-      title: 'Back end',
+      title: 'Back-end',
       content: ['Node.js', 'Express.js', 'Nest.js', 'REST', 'Graphql', 'MongoDB', 'PostgreSQL'],
     },
     {
@@ -62,7 +62,7 @@ const resume = {
   ],
   education: [
     {
-      title: 'Computer Engineering Degree',
+      title: "Bachelor's degree in <br /> Computer Engineering",
       content: [
         {
           subtitle: 'University of Brasília, Brazil',
@@ -103,16 +103,26 @@ const resume = {
   ],
   experiences: [
     {
-      position: 'Frontend Engineer',
+      position: 'Front-end Engineer',
+      company: 'X-Team',
+      companyLink: 'https://x-team.com',
+      time: 'may 2021 - present',
+      description: '',
+      content: [
+        'Worked with front-end development (Typescript, Next.js, Graphql) for partner <a target="_blank" href="https://www.livenation.com/?redirect=false" class="cv__external-link">Live Nation</a>.',
+      ],
+    },
+    {
+      position: 'Front-end Engineer',
       company: 'Goodworld',
       companyLink: 'https://goodworldnow.com',
-      time: 'mar 2020 - present',
+      time: 'mar 2020 - may 2021 | 1 year, 2 months',
       description:
         '(American D.C.-based fintech startup. A Techstars and 500 Startups Portfolio Company. Current raise led by Mastercard)',
       content: [
         // 'Achieved $560,000 in trailing 12 months revenue; YoY growth of 217% in Feb 2021.',
+        `Helped partners raise thousands of dollars and impact thousands of monthly donors implementing custom donation campaign pages created with React, Next.js, Graphql. <br /> Partners include: <a target="_blank" href="https://give.mastercard.com/" class="cv__external-link">Mastercard</a>, <a target="_blank" href="https://www.allforsmall.biz/donate" class="cv__external-link">Citi Bank</a>, <a target="_blank" href="https://mayorsfundla.org/covid19/" class="cv__external-link">City of Los Angeles</a>, <a target="_blank" href="https://www.globalcitizen.org/en/connect/duke-duchess-sussex-covax-donation/" class="cv__external-link">Prince Harry</a>, <a target="_blank" href="https://www.globalcitizen.org/en/media/vaxlive/" class="cv__external-link">Selena Gomez</a>, <a target="_blank" href="https://www.globalcitizen.org/en/media/vaxlive/" class="cv__external-link">Jennifer Lopez</a>, <a target="_blank" href="https://www.globalcitizen.org/en/media/vaxlive/" class="cv__external-link">Foo Fighters</a>, <a target="_blank" href="https://www.globalcitizen.org/en/media/vaxlive/" class="cv__external-link">Ben Affleck</a> & others.`,
         "Leveraged cutting-edge tools (React, Storybook, Typescript, Tailwind) to publish a private design system to unify the company's voice.",
-        `Helped partners such as <a target="_blank" href="https://give.mastercard.com/" class="cv__external-link">Mastercard</a>, <a target="_blank" href="https://www.allforsmall.biz/donate" class="cv__external-link">Citi Bank</a>, <a target="_blank" href="https://mayorsfundla.org/covid19/" class="cv__external-link">City of Los Angeles</a> raise thousands of dollars and impact thousands of monthly donors implementing custom donation campaign pages created with React, Next.js, Graphql.`,
         'Took part in critical product decisions during sprint meetings and calls with partners.',
       ],
     },
@@ -120,7 +130,7 @@ const resume = {
       position: 'Full Stack Web Developer',
       company: 'Colmeia Tech',
       companyLink: 'https://aulascolmeia.com.br',
-      time: 'feb 2017 - dec 2019',
+      time: 'feb 2017 - dec 2019 | 2 years, 10 months',
       description: '(Prominent Brazilian startup that connects students to private tutors)',
       content: [
         // 'First hire at a successful startup in Brasília that went through multiple funding rounds and raised $300k+.',
@@ -128,32 +138,32 @@ const resume = {
         // 'Participated in weekly sprint meetings, and worked closely with both the marketing and design teams.',
         // 'Led the initiative to replace Bootstrap with a custom styling framework developed with Sass and BEM, that increased the efficiency of the workflow with the designers and marketers.',
         // 'Crafted from the ground-up, with the MERN stack, the platform’s web backend, api and frontend pages which were used by thousands of monthly visitors.',
-        'Crafted from the ground-up, with the MERN stack, the platform’s backend/api and the frontend, used by thousands of monthly visitors.',
+        // 'Crafted from the ground-up, with the MERN stack, the platform’s backend/api and the frontend, used by thousands of monthly visitors.',
         'Successfully optimized both the website’s pageload speed and SEO, ultimately achieving top rankings on organic searches.',
         // 'Proposed and implemented state-of-the-art web technologies and practices such as React, React Native, unit & e2e testing.',
       ],
     },
-    {
-      // position: 'Freelance Web Developer',
-      company: 'Self Employed Web Developer',
-      description: `(Clients include <a target="_blank" href="http://mediaplusbrasil.com.br" class="cv__external-link">Media Plus</a> and <a target="_blank" href="https://clinicafaber.com.br/" class="cv__external-link">Clinica Faber</a>)`,
-      clients: [
-        {
-          name: 'MediaPlus',
-          url: 'mediaplusbrasil.com',
-        },
-        {
-          name: 'Clinica Faber',
-          url: 'clinicafaber.com.br',
-        },
-      ],
-      time: 'feb 2017 - dec 2019',
-      content: [
-        'Collaborated with a designer partner to create and deliver digital products to multiple clients.',
-        "Applied agile methodologies and modern technologies to optimize the projects' development.",
-        // 'Utilized cutting-edge technologies and industry standards to deliver reliable and functional products.'
-      ],
-    },
+    // {
+    //   // position: 'Freelance Web Developer',
+    //   company: 'Self Employed Web Developer',
+    //   description: `(Clients include <a target="_blank" href="http://mediaplusbrasil.com.br" class="cv__external-link">Media Plus</a> and <a target="_blank" href="https://clinicafaber.com.br/" class="cv__external-link">Clinica Faber</a>)`,
+    //   clients: [
+    //     {
+    //       name: 'MediaPlus',
+    //       url: 'mediaplusbrasil.com',
+    //     },
+    //     {
+    //       name: 'Clinica Faber',
+    //       url: 'clinicafaber.com.br',
+    //     },
+    //   ],
+    //   time: 'feb 2017 - dec 2019',
+    //   content: [
+    //     'Collaborated with a designer partner to create and deliver digital products to multiple clients.',
+    //     "Applied agile methodologies and modern technologies to optimize the projects' development.",
+    //     // 'Utilized cutting-edge technologies and industry standards to deliver reliable and functional products.'
+    //   ],
+    // },
   ],
 }
 
@@ -189,7 +199,7 @@ const ResumePage = () => {
 
   const Experiences = () => (
     <>
-      <h2 className="cv__title">Experiences</h2>
+      <h2 className="cv__title">4 Years of Experience</h2>
       {resume.experiences.map((e) => (
         <div className="cv__experience">
           <h5 className="cv__content-title">
@@ -229,9 +239,11 @@ const ResumePage = () => {
       <h2 className="cv__title">Education</h2>
       {resume.education.map((e) => (
         <div className="cv__experience">
-          <h5 className="cv__content-title" style={{ marginBottom: '10px' }}>
-            {e.title}
-          </h5>
+          <h5
+            className="cv__content-title"
+            style={{ marginBottom: '10px' }}
+            dangerouslySetInnerHTML={{ __html: e.title }}
+          ></h5>
           {e.content.map((f) => (
             <>
               <h5 className="cv__content-subtitle">
@@ -269,27 +281,27 @@ const ResumePage = () => {
           <FiPhone size={12} color={'#303030'} />
           {resume.phone}
         </li>
-        <li className="cv__info-item">
+        <li className="cv__info-item cv__info-item--underline">
           <a target="_blank" rel="noreferrer" href={`mailto:${resume.email}`}>
             <FiAtSign size={12} color={'#303030'} />
             {resume.email}
           </a>
         </li>
 
-        <li className="cv__info-item">
+        <li className="cv__info-item cv__info-item--underline">
           <a target="_blank" rel="noreferrer" href={`https://${resume.website}`}>
             <FiLink2 size={12} color={'#303030'} />
             {resume.website}
           </a>
         </li>
 
-        <li className="cv__info-item">
+        <li className="cv__info-item cv__info-item--underline">
           <a target="_blank" rel="noreferrer" href={resume.github}>
             <FiGithub size={12} color={'#303030'} />
             Github
           </a>
         </li>
-        <li className="cv__info-item">
+        <li className="cv__info-item cv__info-item--underline">
           <a target="_blank" rel="noreferrer" href={resume.linkedin}>
             <FiLinkedin size={12} color={'#303030'} />
             LinkedIn
@@ -389,7 +401,7 @@ const ResumePage = () => {
         </div> */}
         <Experiences />
         <Accomplishments />
-        <Languages />
+        {/* <Languages /> */}
 
         <LinkMessage />
       </section>
