@@ -11,6 +11,7 @@ import {
 } from 'react-icons/fi'
 import '../components/resume/styles.scss'
 import SEO from '../components/seo'
+import { keywords } from '../data/config'
 
 const resume = {
   name: 'Victor Landim',
@@ -362,25 +363,7 @@ const ResumePage = () => {
 
   return (
     <>
-      <SEO
-        title="Victor Landim | Resume"
-        keywords={[
-          `victor`,
-          `landim`,
-          `web`,
-          `developer`,
-          `programmer`,
-          `portfolio`,
-          `skills`,
-          `react`,
-          `react native`,
-          `javascript`,
-          `programming`,
-          `fullstack`,
-          `frontend`,
-          `backend`,
-        ]}
-      />
+      <SEO title="Victor Landim Front-end Engineer | Resume" keywords={keywords} />
       <section className="cv sheet padding-10mm" style={{ padding: '8mm' }}>
         <div className="cv__top">
           <div className="cv__left">

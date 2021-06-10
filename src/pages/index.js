@@ -12,6 +12,8 @@ import SectionInterests from '../components/sections/Interests'
 import SectionContact from '../components/sections/Contact'
 import SectionFooter from '../components/sections/Footer'
 
+import { keywords } from '../data/config'
+
 export const query = graphql`
   query {
     allContentfulProject {
@@ -53,26 +55,7 @@ const IndexPage = ({ data }) => {
     <>
       {/* <Nav /> */}
       <Page>
-        <SEO
-          title="Victor Landim | Full Stack Web Developer"
-          keywords={[
-            `victor`,
-            `landim`,
-            `web`,
-            `developer`,
-            `programmer`,
-            `portfolio`,
-            `skills`,
-            `react`,
-            `react native`,
-            `javascript`,
-            `typescript`,
-            `programming`,
-            `fullstack`,
-            `frontend`,
-            `backend`,
-          ]}
-        />
+        <SEO title="Victor Landim | Front-end Engineer" keywords={keywords} />
         <SectionHero />
         <SectionBio />
 

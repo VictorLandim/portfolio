@@ -19,8 +19,8 @@ export default () => {
         <Title>i'm ∇ictor.</Title>
         <Subtitle>
           passionate front-end engineer currently <br /> crafting web experiences at{' '}
-          <a target="_blank" rel="noreferrer" href="https://x-team.com/">
-            X-Team
+          <a target="_blank" rel="noreferrer" href="https://livenation.com/?redirect=false">
+            Live Nation
           </a>
           .
         </Subtitle>

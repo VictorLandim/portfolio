@@ -43,7 +43,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "title": "exiftool -Title=\"Victor Landim Front-end Engineer | Resume\" static/resume.pdf"
   },
   "repository": {
     "type": "git",
